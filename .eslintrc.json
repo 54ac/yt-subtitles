@@ -1,0 +1,47 @@
+{
+	"root": true,
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"prettier"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": { "requireConfigFile": false },
+	"plugins": ["@typescript-eslint", "prettier"],
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"useTabs": true,
+				"resolveGlobalModules": true,
+				"singleQuote": false,
+				"trailingComma": "none"
+			}
+		],
+		"arrow-body-style": "off",
+		"prefer-arrow-callback": "off",
+		"no-console": "warn",
+		"quotes": ["off", "double"],
+		"no-plusplus": [
+			"off",
+			{
+				"allowForLoopAfterthoughts": true
+			}
+		],
+		"eqeqeq": ["warn", "smart"],
+		"no-unused-expressions": [
+			"off",
+			{
+				"allowTernary": true
+			}
+		],
+		"@typescript-eslint/no-shadow": "error",
+		"no-shadow": "off",
+		"no-undef": "off",
+		"@typescript-eslint/no-unused-vars": "warn"
+	},
+	"env": {
+		"webextensions": true
+	}
+}

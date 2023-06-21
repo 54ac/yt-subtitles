@@ -1,0 +1,26 @@
+{
+	"name": "Better YouTube Subtitles",
+	"version": "1.0.0",
+	"description": "__MSG_extText__",
+	"manifest_version": 2,
+	"default_locale": "en",
+	"content_scripts": [
+		{
+			"matches": ["https://*.youtube.com/*", "https://youtu.be/*"],
+			"js": ["content-script.ts"],
+			"run_at": "document_end"
+		}
+	],
+	"options_ui": {
+		"page": "options/options.html"
+	},
+	"background": {
+		"scripts": ["background.ts"],
+		"persistent": false
+	},
+	"permissions": ["storage"],
+	"icons": {
+		"48": "img/icon-48.png",
+		"96": "img/icon-96.png"
+	}
+}

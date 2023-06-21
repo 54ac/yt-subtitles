@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Better YouTube Subtitles</title>
+	</head>
+
+	<body>
+		<h3>Better YouTube Subtitles <span id="version" /></h3>
+		<p id="headerInfo" />
+		<table style="table-layout: fixed">
+			<thead>
+				<tr>
+					<th style="width: 60%" />
+					<th style="width: 40%" />
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><h3 id="headerFont" /></td>
+				</tr>
+				<tr>
+					<td><label for="fontFamilyPref" /></td>
+					<td>
+						<input class="option" id="fontFamilyPref" type="checkbox" />
+						<input
+							class="option"
+							id="fontFamily"
+							type="text"
+							placeholder="Arial"
+							data-parent="fontFamilyPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="fontSizePref" /></td>
+					<td>
+						<input class="option" id="fontSizePref" type="checkbox" />
+						<input
+							class="option"
+							id="fontSize"
+							type="range"
+							min="1"
+							max="5"
+							step="0.1"
+							data-parent="fontSizePref"
+						/>
+						<output
+							id="fontSizeOutput"
+							for="fontOpacity"
+							name="x"
+							data-parent="fontSizePref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="fontWeightPref" /></td>
+					<td>
+						<input class="option" id="fontWeightPref" type="checkbox" />
+						<select class="option" id="fontWeight" data-parent="fontWeightPref">
+							<option id="fontWeightThin" value="100" />
+							<option id="fontWeightExtraLight" value="200" />
+							<option id="fontWeightLight" value="300" />
+							<option id="fontWeightNormal" value="400" />
+							<option id="fontWeightMedium" value="500" />
+							<option id="fontWeightSemiBold" value="600" />
+							<option id="fontWeightBold" value="700" />
+							<option id="fontWeightExtraBold" value="800" />
+							<option id="fontWeightBlack" value="900" />
+							<option id="fontWeightExtraBlack" value="950" />
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="fontColorPref" /></td>
+					<td>
+						<input class="option" id="fontColorPref" type="checkbox" />
+						<input
+							class="option"
+							id="fontColor"
+							type="color"
+							data-parent="fontColorPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="fontOpacityPref" /></td>
+					<td>
+						<input class="option" id="fontOpacityPref" type="checkbox" />
+						<input
+							class="option"
+							id="fontOpacity"
+							type="range"
+							min="0"
+							max="100"
+							data-parent="fontOpacityPref"
+						/>
+						<output
+							id="fontOpacityOutput"
+							for="fontOpacity"
+							name="%"
+							data-parent="fontOpacityPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><h3 id="headerEffects" /></td>
+				</tr>
+				<tr>
+					<td><label for="effectLetterSpacingPref" /></td>
+					<td>
+						<input
+							class="option"
+							id="effectLetterSpacingPref"
+							type="checkbox"
+						/>
+						<input
+							class="option"
+							id="effectLetterSpacing"
+							type="range"
+							min="0"
+							max="0.25"
+							step="0.01"
+							data-parent="effectLetterSpacingPref"
+						/>
+						<output
+							id="effectLetterSpacingOutput"
+							for="effectLetterSpacing"
+							name="x"
+							data-parent="effectLetterSpacingPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectWordSpacingPref" /></td>
+					<td>
+						<input class="option" id="effectWordSpacingPref" type="checkbox" />
+						<input
+							class="option"
+							id="effectWordSpacing"
+							type="range"
+							min="0"
+							max="0.5"
+							step="0.01"
+							data-parent="effectWordSpacingPref"
+						/>
+						<output
+							id="effectWordSpacingOutput"
+							for="effectWordSpacing"
+							name="x"
+							data-parent="effectWordSpacingPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectLineHeightPref" /></td>
+					<td>
+						<input class="option" id="effectLineHeightPref" type="checkbox" />
+						<input
+							class="option"
+							id="effectLineHeight"
+							type="range"
+							min="0"
+							max="250"
+							step="10"
+							data-parent="effectLineHeightPref"
+						/>
+						<output
+							id="effectLineHeightOutput"
+							for="effectLineHeight"
+							name="%"
+							data-parent="effectLineHeightPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectTextTransform" /></td>
+					<td>
+						<select class="option" id="effectTextTransform">
+							<option id="effectTextTransformNone" value="none" />
+							<option id="effectTextTransformUppercase" value="uppercase" />
+							<option id="effectTextTransformLowercase" value="lowercase" />
+							<option id="effectTextTransformCapitalize" value="capitalize" />
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectStrokePref" /></td>
+					<td>
+						<input class="option" id="effectStrokePref" type="checkbox" />
+					</td>
+				</tr>
+				<tr data-parent="effectStrokePref">
+					<td><label for="effectStrokeWidth" /></td>
+					<td>
+						<input
+							class="option"
+							id="effectStrokeWidth"
+							type="range"
+							min="0"
+							max="0.5"
+							step="0.05"
+						/>
+						<output
+							id="effectStrokeWidthOutput"
+							for="effectStrokeWidth"
+							name="x"
+						/>
+					</td>
+				</tr>
+				<tr data-parent="effectStrokePref">
+					<td><label for="effectStrokeColor" /></td>
+					<td>
+						<input class="option" id="effectStrokeColor" type="color" />
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectShadowPref" /></td>
+					<td>
+						<input class="option" id="effectShadowPref" type="checkbox" />
+					</td>
+				</tr>
+				<tr data-parent="effectShadowPref">
+					<td><label for="effectShadowOffsetX" /></td>
+					<td>
+						<input
+							class="option"
+							id="effectShadowOffsetX"
+							type="range"
+							min="-0.25"
+							max="0.25"
+							step="0.01"
+						/>
+						<output
+							id="effectShadowOffsetXOutput"
+							for="effectShadowOffsetX"
+							name="x"
+						/>
+					</td>
+				</tr>
+				<tr data-parent="effectShadowPref">
+					<td><label for="effectShadowOffsetY" /></td>
+					<td>
+						<input
+							class="option"
+							id="effectShadowOffsetY"
+							type="range"
+							min="-0.25"
+							max="0.25"
+							step="0.01"
+						/>
+						<output
+							id="effectShadowOffsetYOutput"
+							for="effectShadowOffsetY"
+							name="x"
+						/>
+					</td>
+				</tr>
+				<tr data-parent="effectShadowPref">
+					<td><label for="effectShadowBlur" /></td>
+					<td>
+						<input
+							class="option"
+							id="effectShadowBlur"
+							type="range"
+							min="0"
+							max="0.75"
+							step="0.05"
+						/>
+						<output
+							id="effectShadowBlurOutput"
+							for="effectShadowBlur"
+							name="x"
+						/>
+					</td>
+				</tr>
+				<tr data-parent="effectShadowPref">
+					<td><label for="effectShadowColor" /></td>
+					<td>
+						<input class="option" id="effectShadowColor" type="color" />
+					</td>
+				</tr>
+				<tr data-parent="effectShadowPref">
+					<td><label for="effectShadowOpacity" /></td>
+					<td>
+						<input
+							class="option"
+							id="effectShadowOpacity"
+							type="range"
+							min="0"
+							max="100"
+							step="5"
+						/>
+						<output
+							id="effectShadowOpacityOutput"
+							for="effectShadowOpacity"
+							name="%"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectTextBlurPref" /></td>
+					<td>
+						<input class="option" id="effectTextBlurPref" type="checkbox" />
+						<input
+							class="option"
+							id="effectTextBlur"
+							type="range"
+							min="0"
+							max="0.1"
+							step="0.01"
+							data-parent="effectTextBlurPref"
+						/>
+						<output
+							id="effectTextBlurOutput"
+							for="effectTextBlur"
+							name="x"
+							data-parent="effectTextBlurPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><h3 id="headerBg" /></td>
+				</tr>
+				<tr>
+					<td><label for="backgroundType" /></td>
+					<td>
+						<select class="option" id="backgroundType">
+							<option id="backgroundTypeBg" value="background" />
+							<option id="backgroundTypeWindow" value="window" />
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="backgroundColorOpacityPref" /></td>
+					<td>
+						<input
+							class="option"
+							id="backgroundColorOpacityPref"
+							type="checkbox"
+						/>
+					</td>
+				</tr>
+				<tr data-parent="backgroundColorOpacityPref">
+					<td><label for="backgroundColor" /></td>
+					<td>
+						<input class="option" id="backgroundColor" type="color" />
+					</td>
+				</tr>
+				<tr data-parent="backgroundColorOpacityPref">
+					<td><label for="backgroundOpacity" /></td>
+					<td>
+						<input
+							class="option"
+							id="backgroundOpacity"
+							type="range"
+							min="0"
+							max="100"
+							step="5"
+						/>
+						<output
+							id="backgroundOpacityOutput"
+							for="backgroundOpacity"
+							name="%"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="backgroundPaddingPref" /></td>
+					<td>
+						<input class="option" id="backgroundPaddingPref" type="checkbox" />
+						<input
+							class="option"
+							id="backgroundPadding"
+							type="range"
+							min="0"
+							max="3"
+							step="0.1"
+							data-parent="backgroundPaddingPref"
+						/>
+						<output
+							id="backgroundPaddingOutput"
+							for="backgroundPadding"
+							name="x"
+							data-parent="backgroundPaddingPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="backgroundRadiusPref" /></td>
+					<td>
+						<input class="option" id="backgroundRadiusPref" type="checkbox" />
+						<input
+							class="option"
+							id="backgroundRadius"
+							type="range"
+							min="0"
+							max="5"
+							step="0.1"
+							data-parent="backgroundRadiusPref"
+						/>
+						<output
+							id="backgroundRadiusOutput"
+							for="backgroundRadius"
+							name="x"
+							data-parent="backgroundRadiusPref"
+						/>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<script type="module" src="options.ts"></script>
+	</body>
+</html>

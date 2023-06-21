@@ -1,0 +1,170 @@
+{
+	"extText": {
+		"message": "Adds more customization options to YouTube subtitles."
+	},
+	"optionsButtonText": {
+		"message": "Advanced"
+	},
+	"headerInfo": {
+		"message": "You can also access this menu by using the \"advanced\" button in YouTube's subtitle options menu in the player. Hover over option labels to learn more."
+	},
+	"headerFont": {
+		"message": "Font options"
+	},
+	"headerBg": {
+		"message": "Background options"
+	},
+	"headerEffects": {
+		"message": "Text effects"
+	},
+	"fontFamilyPref": {
+		"message": "Custom font name"
+	},
+	"fontFamilyPrefDesc": {
+		"message": "Due to the security restrictions implemented in the browser, the name of the font has to be typed/pasted into the text field above. Falls back on system default sans-serif if the font cannot be found."
+	},
+	"fontSizePref": {
+		"message": "Font size"
+	},
+	"fontSizePrefDesc": {
+		"message": "Everything in this addon is measured in em or % to maintain proportions."
+	},
+	"fontWeightPref": {
+		"message": "Font weight"
+	},
+	"fontWeightThin": {
+		"message": "Thin"
+	},
+	"fontWeightExtraLight": {
+		"message": "Extra light"
+	},
+	"fontWeightLight": {
+		"message": "Light"
+	},
+	"fontWeightNormal": {
+		"message": "Normal"
+	},
+	"fontWeightMedium": {
+		"message": "Medium"
+	},
+	"fontWeightSemiBold": {
+		"message": "Semi bold"
+	},
+	"fontWeightBold": {
+		"message": "Bold"
+	},
+	"fontWeightExtraBold": {
+		"message": "Extra bold"
+	},
+	"fontWeightBlack": {
+		"message": "Black"
+	},
+	"fontWeightExtraBlack": {
+		"message": "Extra black"
+	},
+	"fontWeightPrefDesc": {
+		"message": "Only works if the font provides the selected weight. Otherwise the browser picks the closest available weight."
+	},
+	"fontColorPref": {
+		"message": "Font color"
+	},
+	"fontOpacityPref": {
+		"message": "Font opacity"
+	},
+	"fontOpacityPrefDesc": {
+		"message": "Set to 0% to hide text."
+	},
+	"effectLetterSpacingPref": {
+		"message": "Letter spacing"
+	},
+	"effectWordSpacingPref": {
+		"message": "Word spacing"
+	},
+	"effectLineHeightPref": {
+		"message": "Line height"
+	},
+	"effectTextTransform": {
+		"message": "Text transform"
+	},
+	"effectTextTransformNone": {
+		"message": "None"
+	},
+	"effectTextTransformUppercase": {
+		"message": "Uppercase"
+	},
+	"effectTextTransformLowercase": {
+		"message": "Lowercase"
+	},
+	"effectTextTransformCapitalize": {
+		"message": "Capitalize"
+	},
+	"effectStrokePref": {
+		"message": "Text stroke"
+	},
+	"effectStrokeWidth": {
+		"message": "Text stroke width"
+	},
+	"effectStrokeColor": {
+		"message": "Text stroke color"
+	},
+	"effectStrokePrefDesc": {
+		"message": "Outline around text. Set to 0x width to disable."
+	},
+	"effectShadowPref": {
+		"message": "Text shadow"
+	},
+	"effectShadowOffsetX": {
+		"message": "Text shadow horizontal offset"
+	},
+	"effectShadowOffsetY": {
+		"message": "Text shadow vertical offset"
+	},
+	"effectShadowColor": {
+		"message": "Text shadow color"
+	},
+	"effectShadowBlur": {
+		"message": "Text shadow blur radius"
+	},
+	"effectShadowOpacity": {
+		"message": "Text shadow opacity"
+	},
+	"effectShadowPrefDesc": {
+		"message": "Set to 0% opacity to disable."
+	},
+	"effectTextBlurPref": {
+		"message": "Text blur"
+	},
+	"backgroundType": {
+		"message": "Background type"
+	},
+	"backgroundTypeBg": {
+		"message": "Per line"
+	},
+	"backgroundTypeWindow": {
+		"message": "One box"
+	},
+	"backgroundColorOpacityPref": {
+		"message": "Background color and opacity"
+	},
+	"backgroundColor": {
+		"message": "Background color"
+	},
+	"backgroundOpacity": {
+		"message": "Background opacity"
+	},
+	"backgroundColorOpacityPrefDesc": {
+		"message": "Set to 0% opacity to hide the background."
+	},
+	"backgroundPaddingPref": {
+		"message": "Background padding"
+	},
+	"backgroundPaddingPrefDesc": {
+		"message": "Adjusts the size of the area covered by the background."
+	},
+	"backgroundRadiusPref": {
+		"message": "Background radius"
+	},
+	"backgroundRadiusPrefDesc": {
+		"message": "Rounded corners."
+	}
+}

@@ -1,4 +1,4 @@
-## The Last.fm Debloater
+## Better YouTube Subtitles
 
 ### What is this?
 

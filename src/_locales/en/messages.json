@@ -18,7 +18,7 @@
 		"message": "Text effects"
 	},
 	"fontFamilyPref": {
-		"message": "Custom font name"
+		"message": "Font name"
 	},
 	"fontFamilyPrefDesc": {
 		"message": "Due to the security restrictions implemented in the browser, the name of the font has to be typed/pasted into the text field above. Falls back on system default sans-serif if the font cannot be found."

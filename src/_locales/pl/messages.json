@@ -1,0 +1,170 @@
+{
+	"extText": {
+		"message": "Dodaje więcej opcji związanych z napisami na YouTube."
+	},
+	"optionsButtonText": {
+		"message": "Zaawansowane"
+	},
+	"headerInfo": {
+		"message": "Dostęp do tego menu można również uzyskać za pomocą przycisku \"zaawansowane\" w opcjach napisów w odtwarzaczu YouTube. Najedź kursorem na etykiety opcji, aby poznać więcej informacji."
+	},
+	"headerFont": {
+		"message": "Opcje czcionki"
+	},
+	"headerBg": {
+		"message": "Opcje tła"
+	},
+	"headerEffects": {
+		"message": "Efekty tekstowe"
+	},
+	"fontFamilyPref": {
+		"message": "Nazwa czcionki"
+	},
+	"fontFamilyPrefDesc": {
+		"message": "Ze względu na ograniczenia bezpieczeństwa zaimplementowane w przeglądarce, nazwa czcionki musi być wpisana/wklejona w pole tekstowe. Używa domyślnej systemowej czcionki bezszeryfowej, jeśli wpisana czcionka nie może być znaleziona."
+	},
+	"fontSizePref": {
+		"message": "Wielkość czcionki"
+	},
+	"fontSizePrefDesc": {
+		"message": "Wszystko w tym dodatku jest mierzone w em lub % w celu zachowania propocji."
+	},
+	"fontWeightPref": {
+		"message": "Grubość czcionki"
+	},
+	"fontWeightThin": {
+		"message": "Thin"
+	},
+	"fontWeightExtraLight": {
+		"message": "Extra light"
+	},
+	"fontWeightLight": {
+		"message": "Light"
+	},
+	"fontWeightNormal": {
+		"message": "Normal"
+	},
+	"fontWeightMedium": {
+		"message": "Medium"
+	},
+	"fontWeightSemiBold": {
+		"message": "Semi bold"
+	},
+	"fontWeightBold": {
+		"message": "Bold"
+	},
+	"fontWeightExtraBold": {
+		"message": "Extra bold"
+	},
+	"fontWeightBlack": {
+		"message": "Black"
+	},
+	"fontWeightExtraBlack": {
+		"message": "Extra black"
+	},
+	"fontWeightPrefDesc": {
+		"message": "Działa tylko wtedy, gdy czcionka o wybranej grubości jest dostępna. W przeciwnym razie użyta jest najbliższa dostępna grubość."
+	},
+	"fontColorPref": {
+		"message": "Kolor czcionki"
+	},
+	"fontOpacityPref": {
+		"message": "Nieprzezroczystość czcionki"
+	},
+	"fontOpacityPrefDesc": {
+		"message": "Ustawienie 0% ukrywa tekst."
+	},
+	"effectLetterSpacingPref": {
+		"message": "Odstęp między literami"
+	},
+	"effectWordSpacingPref": {
+		"message": "Odstęp między słowami"
+	},
+	"effectLineHeightPref": {
+		"message": "Wysokość wiersza"
+	},
+	"effectTextTransform": {
+		"message": "Przekształcenie tekstu"
+	},
+	"effectTextTransformNone": {
+		"message": "Żadne"
+	},
+	"effectTextTransformUppercase": {
+		"message": "Jedynie wielkie litery"
+	},
+	"effectTextTransformLowercase": {
+		"message": "Jedynie małe litery"
+	},
+	"effectTextTransformCapitalize": {
+		"message": "Słowa z wielkiej litery"
+	},
+	"effectStrokePref": {
+		"message": "Obrys tekstu"
+	},
+	"effectStrokeWidth": {
+		"message": "Szerokość obrysu tekstu"
+	},
+	"effectStrokeColor": {
+		"message": "Kolor obrysu tekstu"
+	},
+	"effectStrokePrefDesc": {
+		"message": "Kontur tekstu. Ustawienie 0x wyłącza efekt."
+	},
+	"effectShadowPref": {
+		"message": "Cień tekstu"
+	},
+	"effectShadowOffsetX": {
+		"message": "Poziome przesunięcie cienia tekstu"
+	},
+	"effectShadowOffsetY": {
+		"message": "Pionowe przesunięcie cienia tekstu"
+	},
+	"effectShadowColor": {
+		"message": "Kolor cienia tekstu"
+	},
+	"effectShadowBlur": {
+		"message": "Promień rozmycia cienia tekstu"
+	},
+	"effectShadowOpacity": {
+		"message": "Nieprzezroczystość cienia tekstu"
+	},
+	"effectShadowPrefDesc": {
+		"message": "Ustawienie 0% ukrywa cień."
+	},
+	"effectTextBlurPref": {
+		"message": "Rozmycie tekstu"
+	},
+	"backgroundType": {
+		"message": "Rodzaj tła"
+	},
+	"backgroundTypeBg": {
+		"message": "Na linię"
+	},
+	"backgroundTypeWindow": {
+		"message": "Jedna ramka"
+	},
+	"backgroundColorOpacityPref": {
+		"message": "Kolor i nieprzezroczystość tła"
+	},
+	"backgroundColor": {
+		"message": "Kolor tła"
+	},
+	"backgroundOpacity": {
+		"message": "Nieprzezroczystość tła"
+	},
+	"backgroundColorOpacityPrefDesc": {
+		"message": "Ustawienie 0% ukrywa tło."
+	},
+	"backgroundPaddingPref": {
+		"message": "Obramowanie tła"
+	},
+	"backgroundPaddingPrefDesc": {
+		"message": "Zmienia rozmiar obszaru tła."
+	},
+	"backgroundRadiusPref": {
+		"message": "Zaokrąglenie tła"
+	},
+	"backgroundRadiusPrefDesc": {
+		"message": "Zaokrąglone rogi tła."
+	}
+}

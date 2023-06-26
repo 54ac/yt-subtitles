@@ -6,7 +6,7 @@
 	"default_locale": "en",
 	"content_scripts": [
 		{
-			"matches": ["https://*.youtube.com/*", "https://youtu.be/*"],
+			"matches": ["https://*.youtube.com/watch*"],
 			"js": ["content-script.ts"],
 			"run_at": "document_end"
 		}

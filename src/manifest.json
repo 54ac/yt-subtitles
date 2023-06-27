@@ -1,6 +1,6 @@
 {
 	"name": "Better YouTube Subtitles",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "__MSG_extText__",
 	"manifest_version": 2,
 	"default_locale": "en",
@@ -12,7 +12,7 @@
 		}
 	],
 	"options_ui": {
-		"page": "options/options.html"
+		"page": "options.html"
 	},
 	"background": {
 		"scripts": ["background.ts"],

@@ -6,7 +6,10 @@
 		"message": "Zaawansowane"
 	},
 	"headerInfo": {
-		"message": "Dostęp do tego menu można również uzyskać za pomocą przycisku \"zaawansowane\" w opcjach napisów w odtwarzaczu YouTube. Najedź kursorem na etykiety opcji, aby poznać więcej informacji."
+		"message": "Dostęp do tego menu można również uzyskać za pomocą przycisku \"zaawansowane\" w opcjach napisów w odtwarzaczu YouTube, o ile nie przeszkodzą w tym inne dodatki. Najedź kursorem na etykiety opcji, aby poznać więcej informacji. Podgląd poniżej jest orientacyjny."
+	},
+	"previewText": {
+		"message": "Napisy będą wyglądać mniej więcej tak."
 	},
 	"headerFont": {
 		"message": "Opcje czcionki"

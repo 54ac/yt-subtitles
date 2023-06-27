@@ -6,7 +6,10 @@
 		"message": "Advanced"
 	},
 	"headerInfo": {
-		"message": "You can also access this menu by using the \"advanced\" button in YouTube's subtitle options menu in the player. Hover over option labels to learn more."
+		"message": "You can also access this menu by using the \"advanced\" button in YouTube's subtitle options menu in the player, unless it is overriden by other addons. Hover over option labels to learn more. Preview below is approximate."
+	},
+	"previewText": {
+		"message": "The subtitles will look more or less like this."
 	},
 	"headerFont": {
 		"message": "Font options"

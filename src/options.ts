@@ -1,4 +1,8 @@
-const options = Array.from(
+import { setStorage, getAllStorage } from "./components/storage";
+import { Options } from "./components/defaults";
+import calculateStyles from "./components/calculateStyles";
+
+const optionEls = Array.from(
 	document.getElementsByClassName("option")
 ) as HTMLInputElement[];
 
@@ -17,27 +21,33 @@ const updateRange = (o: HTMLInputElement) => {
 	if (output) output.textContent = o.value + output.name;
 };
 
-const saveOption = (o: HTMLInputElement) => {
+const saveOption = async (o: HTMLInputElement) => {
 	if (o.type === "range") updateRange(o);
 	if (o.type === "checkbox") updateVisibility(o);
 
 	if (o.type === "checkbox")
-		chrome.storage.local.set({
+		await setStorage({
 			[o.id]: o.checked
 		});
 	else
-		chrome.storage.local.set({
+		await setStorage({
 			[o.id]: o.value
 		});
+
+	createPreview();
 };
 
-chrome.storage.local.get(null, (res) => {
-	options.forEach((o: HTMLInputElement) => {
+const restoreOptions = async () => {
+	const optionsStorage = (await getAllStorage()) as Options;
+	optionEls.forEach((o: HTMLInputElement) => {
 		const el = document.getElementById(o.id) as HTMLInputElement;
 		if (!el) return;
 
-		if (typeof res[o.id] === "boolean") el.checked = res[o.id];
-		else if (typeof res[o.id] === "string") el.value = res[o.id];
+		const optionStorage = optionsStorage[o.id as keyof Options];
+		if (optionStorage === undefined) return;
+
+		if (typeof optionStorage === "boolean") el.checked = optionStorage;
+		else if (typeof optionStorage === "string") el.value = optionStorage;
 
 		if (o.type === "checkbox") updateVisibility(o);
 		if (o.type === "range") {
@@ -47,7 +57,31 @@ chrome.storage.local.get(null, (res) => {
 
 		el.onchange = (e) => saveOption(e.target as HTMLInputElement);
 	});
-});
+};
+restoreOptions();
+
+const styleEl = document.getElementById("better-yt-style") as HTMLStyleElement;
+const createPreview = async () => {
+	const previewContainerEl = document.getElementById(
+		"previewContainer"
+	) as HTMLDivElement;
+
+	const [captionSegmentStyles, captionWindowStyles] = await calculateStyles();
+	if (!captionSegmentStyles.length && !captionWindowStyles.length) {
+		previewContainerEl.style.display = "none";
+		return;
+	}
+
+	previewContainerEl.style.display = "";
+	styleEl.innerText = `${
+		captionSegmentStyles.length > 0 &&
+		`.ytp-caption-segment { ${captionSegmentStyles.join(" ")} }`
+	} ${
+		captionWindowStyles.length > 0 &&
+		`.caption-window { ${captionWindowStyles.join(" ")} }`
+	}`;
+};
+createPreview();
 
 const versionEl = document.getElementById("version") as HTMLSpanElement;
 versionEl.textContent = chrome.runtime.getManifest().version;
@@ -56,6 +90,11 @@ const _ = chrome.i18n.getMessage;
 
 const infoEl = document.getElementById("headerInfo") as HTMLParagraphElement;
 infoEl.textContent = _("headerInfo");
+
+const previewEl = document.getElementById(
+	"previewText"
+) as HTMLParagraphElement;
+previewEl.textContent = _("previewText");
 
 const labelEl = Array.from(
 	document.getElementsByTagName("label")

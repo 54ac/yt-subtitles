@@ -1,16 +1,21 @@
-import { defaults } from "./options/defaults";
+import { Options, defaults } from "./components/defaults";
+import { getAllStorage, setStorage } from "./components/storage";
 
-chrome.storage.local.get(null, (res) =>
+const init = async () => {
+	const optionsStorage = (await getAllStorage()) as Options;
+
 	Object.keys(defaults).forEach(
 		(key) =>
-			res[key] === undefined &&
-			chrome.storage.local.set({
+			(optionsStorage === null ||
+				optionsStorage[key as keyof Options] === null) &&
+			setStorage({
 				[key]: defaults[key as keyof typeof defaults]
 			})
-	)
-);
+	);
+};
+init();
 
 chrome.runtime.onMessage.addListener(
-	(message: { action: "openOptions" }) =>
+	(message: { action: string }) =>
 		message.action === "openOptions" && chrome.runtime.openOptionsPage()
 );

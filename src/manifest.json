@@ -1,12 +1,12 @@
 {
 	"name": "Better YouTube Subtitles",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "__MSG_extText__",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"content_scripts": [
 		{
-			"matches": ["https://*.youtube.com/watch*"],
+			"matches": ["https://*.youtube.com/*"],
 			"js": ["content-script.ts"],
 			"run_at": "document_end"
 		}

@@ -75,10 +75,12 @@ const createPreview = async () => {
 	previewContainerEl.style.display = "";
 	styleEl.innerText = `${
 		captionSegmentStyles.length > 0 &&
-		`.ytp-caption-segment { ${captionSegmentStyles.join(" ")} }`
+		`#previewContainer .ytp-caption-segment { ${captionSegmentStyles.join(
+			" "
+		)} }`
 	} ${
 		captionWindowStyles.length > 0 &&
-		`.caption-window { ${captionWindowStyles.join(" ")} }`
+		`#previewContainer .caption-window { ${captionWindowStyles.join(" ")} }`
 	}`;
 };
 createPreview();

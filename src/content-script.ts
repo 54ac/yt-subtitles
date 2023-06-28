@@ -10,10 +10,10 @@ const addStyles = async () => {
 
 	styleEl.innerText = `${
 		captionSegmentStyles.length > 0 &&
-		`.ytp-caption-segment { ${captionSegmentStyles.join(" ")} }`
+		`#movie_player .ytp-caption-segment { ${captionSegmentStyles.join(" ")} }`
 	} ${
 		captionWindowStyles.length > 0 &&
-		`.caption-window { ${captionWindowStyles.join(" ")} }`
+		`#movie_player .caption-window { ${captionWindowStyles.join(" ")} }`
 	}`;
 };
 if (!document.getElementById("better-yt-style")) addStyles();

@@ -43,6 +43,16 @@ const restoreOptions = async () => {
 		const el = document.getElementById(o.id) as HTMLInputElement;
 		if (!el) return;
 
+		//text stroke is not supported in Chrome
+		if (
+			o.id === "effectStrokePref" &&
+			chrome.runtime.getURL("").startsWith("chrome-extension://")
+		) {
+			el.disabled = true;
+			updateVisibility(o);
+			return;
+		}
+
 		const optionStorage = optionsStorage[o.id as keyof Options];
 		if (optionStorage === undefined) return;
 

@@ -111,7 +111,7 @@
 		"message": "Kolor obrysu tekstu"
 	},
 	"effectStrokePrefDesc": {
-		"message": "Kontur tekstu. Ustawienie 0x wyłącza efekt."
+		"message": "Kontur tekstu. Ustawienie 0x wyłącza efekt. Nie działa w Chrome."
 	},
 	"effectShadowPref": {
 		"message": "Cień tekstu"

@@ -111,7 +111,7 @@
 		"message": "Text stroke color"
 	},
 	"effectStrokePrefDesc": {
-		"message": "Outline around text. Set to 0x width to disable."
+		"message": "Outline around text. Set to 0x width to disable. Not supported by Chrome."
 	},
 	"effectShadowPref": {
 		"message": "Text shadow"

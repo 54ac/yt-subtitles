@@ -2,7 +2,7 @@
 
 ### What is this?
 
-This is a Firefox addon written in TypeScript which adds more customization options to YouTube subtitles. It is fully compatible with existing YouTube subtitles, as it merely changes their appearance using CSS and does not replace them.
+This is a browser addon written in TypeScript which adds more customization options to YouTube subtitles. It is fully compatible with existing YouTube subtitles, as it merely changes their appearance using CSS and does not replace them.
 
 Access the options either as you normally would in the browser or by clicking the "Advanced" button in the subtitles options menu in the YouTube player, mess around with the options, refresh any opened YouTube pages, and enjoy.
 
@@ -22,4 +22,5 @@ I wrote this addon over a span of a few days as I was not satisfied with the amo
 ### Where can I download this?
 
 - [The Firefox Addons (AMO) listing.](https://addons.mozilla.org/en-US/firefox/addon/better-youtube-subtitles/)
+- [The Chrome Web Store listing.](https://chrome.google.com/webstore/detail/better-youtube-subtitles/ponocngkmjmakpleolejgelipolkmalm)
 - [The GitHub releases page.](https://github.com/54ac/yt-subtitles/releases)

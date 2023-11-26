@@ -1,4 +1,4 @@
-import { getAllStorage } from "./storage";
+import { getAllStorage, setStorage } from "./storage";
 import { Options } from "./defaults";
 
 // https://stackoverflow.com/a/28056903
@@ -125,7 +125,15 @@ const calculateStyles = async () => {
 			`border-radius: ${options.backgroundRadius}em !important;`
 		);
 
-	return [captionSegmentStyles, captionWindowStyles];
+	await setStorage({
+		captionSegmentStyles:
+			captionSegmentStyles.length > 0 ? captionSegmentStyles.join(" ") : ""
+	});
+
+	await setStorage({
+		captionWindowStyles:
+			captionWindowStyles.length > 0 ? captionWindowStyles.join(" ") : ""
+	});
 };
 
 export default calculateStyles;

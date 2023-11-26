@@ -35,6 +35,8 @@ export type Options = {
 	backgroundPadding: string;
 	backgroundRadiusPref: boolean;
 	backgroundRadius: string;
+	captionSegmentStyles: string;
+	captionWindowStyles: string;
 };
 
 export const defaults: Options = {
@@ -73,5 +75,7 @@ export const defaults: Options = {
 	backgroundPaddingPref: false,
 	backgroundPadding: "0",
 	backgroundRadiusPref: false,
-	backgroundRadius: "0"
+	backgroundRadius: "0",
+	captionSegmentStyles: "",
+	captionWindowStyles: ""
 };

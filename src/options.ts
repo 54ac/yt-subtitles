@@ -1,4 +1,4 @@
-import { setStorage, getAllStorage } from "./components/storage";
+import { setStorage, getAllStorage, getStorage } from "./components/storage";
 import { Options } from "./components/defaults";
 import calculateStyles from "./components/calculateStyles";
 
@@ -34,6 +34,7 @@ const saveOption = async (o: HTMLInputElement) => {
 			[o.id]: o.value
 		});
 
+	await calculateStyles();
 	createPreview();
 };
 
@@ -76,21 +77,27 @@ const createPreview = async () => {
 		"previewContainer"
 	) as HTMLDivElement;
 
-	const [captionSegmentStyles, captionWindowStyles] = await calculateStyles();
-	if (!captionSegmentStyles.length && !captionWindowStyles.length) {
+	const captionSegmentStyles = (await getStorage(
+		"captionSegmentStyles"
+	)) as Options["captionSegmentStyles"];
+	const captionWindowStyles = (await getStorage(
+		"captionWindowStyles"
+	)) as Options["captionWindowStyles"];
+
+	if (!captionSegmentStyles && !captionWindowStyles) {
 		previewContainerEl.style.display = "none";
 		return;
 	}
 
 	previewContainerEl.style.display = "";
 	styleEl.innerText = `${
-		captionSegmentStyles.length > 0 &&
-		`#previewContainer .ytp-caption-segment { ${captionSegmentStyles.join(
-			" "
-		)} }`
+		captionSegmentStyles?.length > 0
+			? `#previewContainer .ytp-caption-segment { ${captionSegmentStyles} }`
+			: ""
 	} ${
-		captionWindowStyles.length > 0 &&
-		`#previewContainer .caption-window { ${captionWindowStyles.join(" ")} }`
+		captionWindowStyles?.length > 0
+			? `#previewContainer .caption-window { ${captionWindowStyles} }`
+			: ""
 	}`;
 };
 createPreview();

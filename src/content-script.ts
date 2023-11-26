@@ -1,19 +1,28 @@
-import calculateStyles from "./components/calculateStyles";
+import { Options } from "./components/defaults";
+import { getStorage } from "./components/storage";
 
 const addStyles = async () => {
-	const [captionSegmentStyles, captionWindowStyles] = await calculateStyles();
-	if (!captionSegmentStyles.length && !captionWindowStyles.length) return;
+	const captionSegmentStyles = (await getStorage(
+		"captionSegmentStyles"
+	)) as Options["captionSegmentStyles"];
+	const captionWindowStyles = (await getStorage(
+		"captionWindowStyles"
+	)) as Options["captionWindowStyles"];
+
+	if (!captionSegmentStyles && !captionWindowStyles) return;
 
 	const styleEl = document.createElement("style");
 	styleEl.id = "better-yt-style";
 	document.head.appendChild(styleEl);
 
 	styleEl.innerText = `${
-		captionSegmentStyles.length > 0 &&
-		`#movie_player .ytp-caption-segment { ${captionSegmentStyles.join(" ")} }`
+		captionSegmentStyles?.length > 0
+			? `#movie_player .ytp-caption-segment { ${captionSegmentStyles}`
+			: ""
 	} ${
-		captionWindowStyles.length > 0 &&
-		`#movie_player .caption-window { ${captionWindowStyles.join(" ")} }`
+		captionWindowStyles?.length > 0
+			? `#movie_player .caption-window { ${captionWindowStyles} }`
+			: ""
 	}`;
 };
 if (!document.getElementById("better-yt-style")) addStyles();

@@ -1,3 +1,11 @@
+export const getStorage = async (key: string) =>
+	new Promise((resolve) =>
+		chrome.storage.local.get(key, (res) => {
+			if (res[key]) resolve(res[key]);
+			else resolve(null);
+		})
+	);
+
 export const getAllStorage = async () =>
 	new Promise((resolve) =>
 		chrome.storage.local.get(null, (res) => {

@@ -17,7 +17,7 @@ const addStyles = async () => {
 
 	styleEl.innerText = `${
 		captionSegmentStyles?.length > 0
-			? `#movie_player .ytp-caption-segment { ${captionSegmentStyles}`
+			? `#movie_player .ytp-caption-segment { ${captionSegmentStyles} }`
 			: ""
 	} ${
 		captionWindowStyles?.length > 0

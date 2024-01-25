@@ -18,7 +18,7 @@
 		"message": "Opcje tła"
 	},
 	"headerEffects": {
-		"message": "Efekty tekstowe"
+		"message": "Opcje tekstu"
 	},
 	"fontFamilyPref": {
 		"message": "Nazwa czcionki"
@@ -85,6 +85,27 @@
 	},
 	"effectLineHeightPref": {
 		"message": "Wysokość wiersza"
+	},
+	"effectTextPosition": {
+		"message": "Pozycja tekstu"
+	},
+	"effectTextPositionDesc": {
+		"message": "Ręczne pozycjonowanie tekstu w pionie nie jest możliwe, jeśli ta opcja jest włączona."
+	},
+	"effectTextPositionDefault": {
+		"message": "Domyślna"
+	},
+	"effectTextPositionTop": {
+		"message": "Góra"
+	},
+	"effectTextPositionBottom": {
+		"message": "Dół"
+	},
+	"effectTextMarginPref": {
+		"message": "Margines tekstu od krawędzi"
+	},
+	"effectTextMarginPrefDesc": {
+		"message": "Ręczne pozycjonowanie tekstu nie działa poprawnie, jeśli ta opcja jest włączona."
 	},
 	"effectTextTransform": {
 		"message": "Przekształcenie tekstu"

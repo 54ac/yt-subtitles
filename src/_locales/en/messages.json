@@ -18,7 +18,7 @@
 		"message": "Background options"
 	},
 	"headerEffects": {
-		"message": "Text effects"
+		"message": "Text options"
 	},
 	"fontFamilyPref": {
 		"message": "Font name"
@@ -85,6 +85,27 @@
 	},
 	"effectLineHeightPref": {
 		"message": "Line height"
+	},
+	"effectTextPosition": {
+		"message": "Text position"
+	},
+	"effectTextPositionDesc": {
+		"message": "Cannot manually position text vertically when enabled."
+	},
+	"effectTextPositionDefault": {
+		"message": "Default"
+	},
+	"effectTextPositionTop": {
+		"message": "Top"
+	},
+	"effectTextPositionBottom": {
+		"message": "Bottom"
+	},
+	"effectTextMarginPref": {
+		"message": "Text margin from edge"
+	},
+	"effectTextMarginPrefDesc": {
+		"message": "Moving text manually is glitched when this is enabled."
 	},
 	"effectTextTransform": {
 		"message": "Text transform"

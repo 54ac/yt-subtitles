@@ -60,6 +60,20 @@ const calculateStyles = async () => {
 			`line-height: ${options.effectLineHeight}% !important;`
 		);
 
+	if (options.effectTextMarginPref)
+		captionWindowStyles.push(
+			`margin-bottom: ${options.effectTextMargin}em !important; margin-top: ${options.effectTextMargin}em !important;`
+		);
+
+	if (options.effectTextPosition === "top")
+		captionWindowStyles.push(
+			`top: 2% !important; bottom: unset !important; height: min-content !important;`
+		);
+	else if (options.effectTextPosition === "bottom")
+		captionWindowStyles.push(
+			`bottom: 2% !important; top: unset !important; height: min-content !important;`
+		);
+
 	if (options.effectTextTransform !== "none")
 		captionSegmentStyles.push(
 			`text-transform: ${options.effectTextTransform} !important;`

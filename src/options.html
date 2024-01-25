@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
 	<head>
@@ -172,6 +172,37 @@
 							for="effectLineHeight"
 							name="%"
 							data-parent="effectLineHeightPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectTextPosition" /></td>
+					<td>
+						<select class="option" id="effectTextPosition">
+							<option id="effectTextPositionDefault" value="default" />
+							<option id="effectTextPositionTop" value="top" />
+							<option id="effectTextPositionBottom" value="bottom" />
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectTextMarginPref" /></td>
+					<td>
+						<input class="option" id="effectTextMarginPref" type="checkbox" />
+						<input
+							class="option"
+							id="effectTextMargin"
+							type="range"
+							min="0"
+							max="12.5"
+							step="1.25"
+							data-parent="effectTextMarginPref"
+						/>
+						<output
+							id="effectTextMarginOutput"
+							for="effectTextMargin"
+							name="x"
+							data-parent="effectTextMarginPref"
 						/>
 					</td>
 				</tr>

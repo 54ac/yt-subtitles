@@ -15,6 +15,9 @@ export type Options = {
 	effectWordSpacing: string;
 	effectLineHeightPref: boolean;
 	effectLineHeight: string;
+	effectTextMarginPref: boolean;
+	effectTextMargin: string;
+	effectTextPosition: string;
 	effectTextTransform: string;
 	effectStrokePref: boolean;
 	effectStrokeWidth: string;
@@ -52,6 +55,9 @@ export const defaults: Options = {
 	fontOpacity: "100",
 	effectLineHeightPref: false,
 	effectLineHeight: "100",
+	effectTextMarginPref: false,
+	effectTextMargin: "0",
+	effectTextPosition: "default",
 	effectLetterSpacingPref: false,
 	effectLetterSpacing: "0",
 	effectWordSpacingPref: false,

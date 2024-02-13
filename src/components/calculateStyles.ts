@@ -69,6 +69,10 @@ const calculateStyles = async () => {
 		captionWindowStyles.push(
 			`top: 2% !important; bottom: unset !important; height: min-content !important;`
 		);
+	else if (options.effectTextPosition === "center")
+		captionWindowStyles.push(
+			`top: 50% !important; bottom: unset !important; height: min-content !important;`
+		);
 	else if (options.effectTextPosition === "bottom")
 		captionWindowStyles.push(
 			`bottom: 2% !important; top: unset !important; height: min-content !important;`

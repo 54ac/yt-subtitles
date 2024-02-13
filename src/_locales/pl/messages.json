@@ -98,6 +98,9 @@
 	"effectTextPositionTop": {
 		"message": "Góra"
 	},
+	"effectTextPositionCenter": {
+		"message": "Środek"
+	},
 	"effectTextPositionBottom": {
 		"message": "Dół"
 	},

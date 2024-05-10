@@ -42,15 +42,15 @@
 							class="option"
 							id="fontSize"
 							type="range"
-							min="1"
-							max="5"
-							step="0.05"
+							min="50"
+							max="250"
+							step="5"
 							data-parent="fontSizePref"
 						/>
 						<output
 							id="fontSizeOutput"
-							for="fontOpacity"
-							name="x"
+							for="fontSize"
+							name="%"
 							data-parent="fontSizePref"
 						/>
 					</td>
@@ -176,13 +176,24 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label for="effectTextPosition" /></td>
+					<td><label for="effectTextVertPosition" /></td>
 					<td>
-						<select class="option" id="effectTextPosition">
-							<option id="effectTextPositionDefault" value="default" />
-							<option id="effectTextPositionTop" value="top" />
-							<option id="effectTextPositionCenter" value="center" />
-							<option id="effectTextPositionBottom" value="bottom" />
+						<select class="option" id="effectTextVertPosition">
+							<option id="effectTextVertPositionDefault" value="default" />
+							<option id="effectTextVertPositionTop" value="top" />
+							<option id="effectTextVertPositionCenter" value="center" />
+							<option id="effectTextVertPositionBottom" value="bottom" />
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectTextHorPosition" /></td>
+					<td>
+						<select class="option" id="effectTextHorPosition">
+							<option id="effectTextHorPositionDefault" value="default" />
+							<option id="effectTextHorPositionLeft" value="left" />
+							<option id="effectTextHorPositionCenter" value="center" />
+							<option id="effectTextHorPositionRight" value="right" />
 						</select>
 					</td>
 				</tr>

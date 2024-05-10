@@ -1,6 +1,6 @@
 {
 	"name": "Better YouTube Subtitles",
-	"version": "1.1.7",
+	"version": "1.1.8",
 	"description": "__MSG_extText__",
 	"manifest_version": 2,
 	"default_locale": "en",
@@ -22,5 +22,10 @@
 	"icons": {
 		"48": "img/icon-48.png",
 		"96": "img/icon-96.png"
+	},
+	"commands": {
+		"optionsOpen": {
+			"description": "__MSG_commandOpenOptions__"
+		}
 	}
 }

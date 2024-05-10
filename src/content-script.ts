@@ -11,6 +11,8 @@ const addStyles = async () => {
 
 	if (!captionSegmentStyles && !captionWindowStyles) return;
 
+	document.getElementById("better-yt-style")?.remove();
+
 	const styleEl = document.createElement("style");
 	styleEl.id = "better-yt-style";
 	document.head.appendChild(styleEl);
@@ -25,7 +27,7 @@ const addStyles = async () => {
 			: ""
 	}`;
 };
-if (!document.getElementById("better-yt-style")) addStyles();
+addStyles();
 
 const newOptionsButton = document.createElement("button");
 newOptionsButton.innerText = chrome.i18n.getMessage("optionsButtonText");

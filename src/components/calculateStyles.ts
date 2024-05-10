@@ -25,7 +25,9 @@ const calculateStyles = async () => {
 		);
 
 	options.fontSizePref &&
-		captionSegmentStyles.push(`font-size: ${options.fontSize}em !important;`);
+		captionSegmentStyles.push(
+			`font-size: ${parseInt(options.fontSize) * 2}% !important;`
+		);
 
 	options.fontWeightPref &&
 		captionSegmentStyles.push(`font-weight: ${options.fontWeight} !important;`);
@@ -65,17 +67,30 @@ const calculateStyles = async () => {
 			`margin-bottom: ${options.effectTextMargin}em !important; margin-top: ${options.effectTextMargin}em !important;`
 		);
 
-	if (options.effectTextPosition === "top")
+	if (options.effectTextVertPosition === "top")
 		captionWindowStyles.push(
-			`top: 2% !important; bottom: unset !important; height: min-content !important;`
+			`top: 0 !important; bottom: unset !important; height: min-content !important;`
 		);
-	else if (options.effectTextPosition === "center")
+	else if (options.effectTextVertPosition === "center")
 		captionWindowStyles.push(
-			`top: 50% !important; bottom: unset !important; height: min-content !important;`
+			`bottom: 50% !important; height: min-content !important;`
 		);
-	else if (options.effectTextPosition === "bottom")
+	else if (options.effectTextVertPosition === "bottom")
 		captionWindowStyles.push(
-			`bottom: 2% !important; top: unset !important; height: min-content !important;`
+			`bottom: 0 !important; height: min-content !important;`
+		);
+
+	if (options.effectTextHorPosition === "left")
+		captionWindowStyles.push(
+			`left: 0 !important; margin-left: unset !important;`
+		);
+	else if (options.effectTextHorPosition === "center")
+		captionWindowStyles.push(
+			`left: 50% !important; margin-left: unset !important;`
+		);
+	else if (options.effectTextHorPosition === "right")
+		captionWindowStyles.push(
+			`left: unset !important; right: 0 !important; margin-left: unset !important;`
 		);
 
 	if (options.effectTextTransform !== "none")
@@ -91,7 +106,7 @@ const calculateStyles = async () => {
 	)
 		captionSegmentStyles.push(`text-shadow: none !important;`);
 
-	//use paint-order for outside stroke - not supported in Chrome
+	//use paint-order for outside stroke
 	if (options.effectStrokePref)
 		captionSegmentStyles.push(
 			`-webkit-text-stroke: ${options.effectStrokeWidth}em ${options.effectStrokeColor} !important; paint-order: stroke !important;`

@@ -17,7 +17,8 @@ export type Options = {
 	effectLineHeight: string;
 	effectTextMarginPref: boolean;
 	effectTextMargin: string;
-	effectTextPosition: string;
+	effectTextVertPosition: string;
+	effectTextHorPosition: string;
 	effectTextTransform: string;
 	effectStrokePref: boolean;
 	effectStrokeWidth: string;
@@ -46,7 +47,7 @@ export const defaults: Options = {
 	fontFamilyPref: false,
 	fontFamily: "",
 	fontSizePref: false,
-	fontSize: "1",
+	fontSize: "100",
 	fontWeightPref: false,
 	fontWeight: "400",
 	fontColorPref: false,
@@ -57,7 +58,8 @@ export const defaults: Options = {
 	effectLineHeight: "100",
 	effectTextMarginPref: false,
 	effectTextMargin: "0",
-	effectTextPosition: "default",
+	effectTextVertPosition: "default",
+	effectTextHorPosition: "default",
 	effectLetterSpacingPref: false,
 	effectLetterSpacing: "0",
 	effectWordSpacingPref: false,

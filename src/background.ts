@@ -16,7 +16,10 @@ const init = async () => {
 };
 init();
 
-chrome.runtime.onMessage.addListener(
-	(message: { action: string }) =>
-		message.action === "openOptions" && chrome.runtime.openOptionsPage()
-);
+chrome.runtime.onMessage.addListener((message: { action: string }) => {
+	if (message.action === "openOptions") chrome.runtime.openOptionsPage();
+});
+
+chrome.commands.onCommand.addListener(async (command) => {
+	if (command === "optionsOpen") chrome.runtime.openOptionsPage();
+});

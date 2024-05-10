@@ -2,7 +2,7 @@
 	"name": "yt-subtitles",
 	"author": {
 		"name": "54ac",
-		"email": "me@54ac.bio",
+		"email": "me@54ac.ovh",
 		"url": "https://github.com/54ac"
 	},
 	"repository": "github:54ac/yt-subtitles",
@@ -11,7 +11,7 @@
 	"private": true,
 	"devDependencies": {
 		"@parcel/config-webextension": "^2.8.3",
-		"@types/chrome": "^0.0.260",
+		"@types/chrome": "^0.0.267",
 		"@typescript-eslint/eslint-plugin": "^7.0.1",
 		"@typescript-eslint/parser": "^7.0.1",
 		"cpy-cli": "^5.0.0",

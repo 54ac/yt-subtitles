@@ -86,23 +86,41 @@
 	"effectLineHeightPref": {
 		"message": "Wysokość wiersza"
 	},
-	"effectTextPosition": {
-		"message": "Pozycja tekstu"
+	"effectTextVertPosition": {
+		"message": "Pozycja tekstu w pionie"
 	},
-	"effectTextPositionDesc": {
+	"effectTextVertPositionDesc": {
 		"message": "Ręczne pozycjonowanie tekstu w pionie nie jest możliwe, jeśli ta opcja jest włączona."
 	},
-	"effectTextPositionDefault": {
+	"effectTextVertPositionDefault": {
 		"message": "Domyślna"
 	},
-	"effectTextPositionTop": {
+	"effectTextVertPositionTop": {
 		"message": "Góra"
 	},
-	"effectTextPositionCenter": {
+	"effectTextVertPositionCenter": {
 		"message": "Środek"
 	},
-	"effectTextPositionBottom": {
+	"effectTextVertPositionBottom": {
 		"message": "Dół"
+	},
+	"effectTextHorPosition": {
+		"message": "Pozycja tekstu w poziomie"
+	},
+	"effectTextHorPositionDesc": {
+		"message": "Ręczne pozycjonowanie tekstu w poziomie nie jest możliwe, jeśli ta opcja jest włączona."
+	},
+	"effectTextHorPositionDefault": {
+		"message": "Domyślna"
+	},
+	"effectTextHorPositionLeft": {
+		"message": "Lewo"
+	},
+	"effectTextHorPositionCenter": {
+		"message": "Środek"
+	},
+	"effectTextHorPositionRight": {
+		"message": "Prawo"
 	},
 	"effectTextMarginPref": {
 		"message": "Margines tekstu od krawędzi"
@@ -135,7 +153,7 @@
 		"message": "Kolor obrysu tekstu"
 	},
 	"effectStrokePrefDesc": {
-		"message": "Kontur tekstu. Ustawienie 0x wyłącza efekt. Nie działa w Chrome."
+		"message": "Kontur tekstu. Ustawienie 0x wyłącza efekt."
 	},
 	"effectShadowPref": {
 		"message": "Cień tekstu"

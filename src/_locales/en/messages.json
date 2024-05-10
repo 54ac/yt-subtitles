@@ -86,23 +86,41 @@
 	"effectLineHeightPref": {
 		"message": "Line height"
 	},
-	"effectTextPosition": {
-		"message": "Text position"
+	"effectTextVertPosition": {
+		"message": "Text position (vertical)"
 	},
-	"effectTextPositionDesc": {
+	"effectTextVertPositionDesc": {
 		"message": "Cannot manually position text vertically when enabled."
 	},
-	"effectTextPositionDefault": {
+	"effectTextVertPositionDefault": {
 		"message": "Default"
 	},
-	"effectTextPositionTop": {
+	"effectTextVertPositionTop": {
 		"message": "Top"
 	},
-	"effectTextPositionCenter": {
+	"effectTextVertPositionCenter": {
 		"message": "Center"
 	},
-	"effectTextPositionBottom": {
+	"effectTextVertPositionBottom": {
 		"message": "Bottom"
+	},
+	"effectTextHorPosition": {
+		"message": "Text position (horizontal)"
+	},
+	"effectTextHorPositionDesc": {
+		"message": "Cannot manually position text horizontally when enabled."
+	},
+	"effectTextHorPositionDefault": {
+		"message": "Default"
+	},
+	"effectTextHorPositionLeft": {
+		"message": "Left"
+	},
+	"effectTextHorPositionCenter": {
+		"message": "Center"
+	},
+	"effectTextHorPositionRight": {
+		"message": "Right"
 	},
 	"effectTextMarginPref": {
 		"message": "Text margin from edge"
@@ -135,7 +153,7 @@
 		"message": "Text stroke color"
 	},
 	"effectStrokePrefDesc": {
-		"message": "Outline around text. Set to 0x width to disable. Not supported by Chrome."
+		"message": "Outline around text. Set to 0x width to disable."
 	},
 	"effectShadowPref": {
 		"message": "Text shadow"
@@ -193,5 +211,11 @@
 	},
 	"backgroundRadiusPrefDesc": {
 		"message": "Rounded corners."
+	},
+	"commandOpenOptions": {
+		"message": "Open options"
+	},
+	"commandFontSizeToggle": {
+		"message": "Toggle font size"
 	}
 }

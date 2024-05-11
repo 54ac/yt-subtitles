@@ -35,11 +35,11 @@ chrome.commands.onCommand.addListener(async (command) => {
 			fontSizePref: !options.fontSizePref
 		});
 	} else if (command === "fontSizeUp") {
-		if (options.fontSize === "250") return;
+		if (options.fontSize === "200") return;
 		await setStorage({
 			fontSize:
-				parseInt(options.fontSize) + 25 > 250
-					? "250"
+				parseInt(options.fontSize) + 25 > 200
+					? "200"
 					: (parseInt(options.fontSize) + 25).toString()
 		});
 	} else if (command === "fontSizeDown") {

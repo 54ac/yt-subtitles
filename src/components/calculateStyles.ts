@@ -26,7 +26,7 @@ const calculateStyles = async () => {
 
 	options.fontSizePref &&
 		captionSegmentStyles.push(
-			`font-size: ${parseInt(options.fontSize) * 2}% !important;`
+			`font-size: ${100 + parseInt(options.fontSize) * 2}% !important;`
 		);
 
 	options.fontWeightPref &&

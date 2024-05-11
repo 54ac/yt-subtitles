@@ -3,45 +3,28 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/stylistic",
 		"prettier"
 	],
 	"parser": "@typescript-eslint/parser",
-	"parserOptions": { "requireConfigFile": false },
-	"plugins": ["@typescript-eslint", "prettier"],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"project": "./tsconfig.json"
+	},
+	"plugins": ["prettier"],
 	"rules": {
-		"prettier/prettier": [
-			"error",
-			{
-				"useTabs": true,
-				"resolveGlobalModules": true,
-				"singleQuote": false,
-				"trailingComma": "none"
-			}
-		],
-		"arrow-body-style": "off",
-		"prefer-arrow-callback": "off",
-		"no-console": "warn",
-		"quotes": ["off", "double"],
-		"no-plusplus": [
-			"off",
-			{
-				"allowForLoopAfterthoughts": true
-			}
-		],
-		"eqeqeq": ["warn", "smart"],
+		"prettier/prettier": ["error"],
+		"no-unused-vars": 1,
+		"no-console": 1,
 		"no-unused-expressions": [
-			"off",
-			{
-				"allowTernary": true
-			}
-		],
-		"@typescript-eslint/no-shadow": "error",
-		"no-shadow": "off",
-		"no-undef": "off",
-		"@typescript-eslint/no-unused-vars": "warn"
+			2,
+			{ "allowShortCircuit": true, "allowTernary": true }
+		]
 	},
 	"env": {
-		"webextensions": true
+		"webextensions": true,
+		"es2021": true,
+		"browser": true
 	}
 }

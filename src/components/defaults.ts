@@ -1,4 +1,4 @@
-export type Options = {
+export interface Options {
 	fontFamilyPref: boolean;
 	fontFamily: string;
 	fontSizePref: boolean;
@@ -41,7 +41,7 @@ export type Options = {
 	backgroundRadius: string;
 	captionSegmentStyles: string;
 	captionWindowStyles: string;
-};
+}
 
 export const defaults: Options = {
 	fontFamilyPref: false,

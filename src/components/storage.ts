@@ -14,5 +14,5 @@ export const getAllStorage = async () =>
 		})
 	);
 
-export const setStorage = async (obj: { [key: string]: string | boolean }) =>
+export const setStorage = async (obj: Record<string, string | boolean>) =>
 	new Promise((resolve) => chrome.storage.local.set(obj, () => resolve(null)));

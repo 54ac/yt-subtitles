@@ -198,23 +198,52 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label for="effectTextMarginPref" /></td>
+					<td><label for="effectTextVertMarginPref" /></td>
 					<td>
-						<input class="option" id="effectTextMarginPref" type="checkbox" />
 						<input
 							class="option"
-							id="effectTextMargin"
+							id="effectTextVertMarginPref"
+							type="checkbox"
+						/>
+						<input
+							class="option"
+							id="effectTextVertMargin"
 							type="range"
 							min="0"
 							max="12.5"
 							step="1.25"
-							data-parent="effectTextMarginPref"
+							data-parent="effectTextVertMarginPref"
 						/>
 						<output
-							id="effectTextMarginOutput"
-							for="effectTextMargin"
+							id="effectTextVertMarginOutput"
+							for="effectTextVertMargin"
 							name="x"
-							data-parent="effectTextMarginPref"
+							data-parent="effectTextVertMarginPref"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="effectTextHorMarginPref" /></td>
+					<td>
+						<input
+							class="option"
+							id="effectTextHorMarginPref"
+							type="checkbox"
+						/>
+						<input
+							class="option"
+							id="effectTextHorMargin"
+							type="range"
+							min="0"
+							max="12.5"
+							step="1.25"
+							data-parent="effectTextHorMarginPref"
+						/>
+						<output
+							id="effectTextHorMarginOutput"
+							for="effectTextHorMargin"
+							name="x"
+							data-parent="effectTextHorMarginPref"
 						/>
 					</td>
 				</tr>

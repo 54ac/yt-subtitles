@@ -122,10 +122,16 @@
 	"effectTextHorPositionRight": {
 		"message": "Prawo"
 	},
-	"effectTextMarginPref": {
-		"message": "Margines tekstu od krawędzi"
+	"effectTextVertMarginPref": {
+		"message": "Margines tekstu od krawędzi w pionie"
 	},
-	"effectTextMarginPrefDesc": {
+	"effectTextVertMarginPrefDesc": {
+		"message": "Ręczne pozycjonowanie tekstu nie działa poprawnie, jeśli ta opcja jest włączona."
+	},
+	"effectTextHorMarginPref": {
+		"message": "Margines tekstu od krawędzi w poziomie"
+	},
+	"effectTextHorMarginPrefDesc": {
 		"message": "Ręczne pozycjonowanie tekstu nie działa poprawnie, jeśli ta opcja jest włączona."
 	},
 	"effectTextTransform": {

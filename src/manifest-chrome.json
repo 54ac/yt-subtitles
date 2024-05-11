@@ -1,6 +1,6 @@
 {
 	"name": "Better YouTube Subtitles",
-	"version": "1.1.11",
+	"version": "1.1.12",
 	"description": "__MSG_extText__",
 	"manifest_version": 3,
 	"default_locale": "en",

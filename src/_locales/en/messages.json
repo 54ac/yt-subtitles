@@ -122,10 +122,16 @@
 	"effectTextHorPositionRight": {
 		"message": "Right"
 	},
-	"effectTextMarginPref": {
-		"message": "Text margin from edge"
+	"effectTextVertMarginPref": {
+		"message": "Vertical text margin from edge"
 	},
-	"effectTextMarginPrefDesc": {
+	"effectTextVertMarginPrefDesc": {
+		"message": "Moving text manually is glitched when this is enabled."
+	},
+	"effectTextHorMarginPref": {
+		"message": "Horizontal text margin from edge"
+	},
+	"effectTextHorMarginPrefDesc": {
 		"message": "Moving text manually is glitched when this is enabled."
 	},
 	"effectTextTransform": {

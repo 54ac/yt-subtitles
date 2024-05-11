@@ -15,8 +15,10 @@ export interface Options {
 	effectWordSpacing: string;
 	effectLineHeightPref: boolean;
 	effectLineHeight: string;
-	effectTextMarginPref: boolean;
-	effectTextMargin: string;
+	effectTextVertMarginPref: boolean;
+	effectTextVertMargin: string;
+	effectTextHorMarginPref: boolean;
+	effectTextHorMargin: string;
 	effectTextVertPosition: string;
 	effectTextHorPosition: string;
 	effectTextTransform: string;
@@ -57,8 +59,10 @@ export const defaults: Options = {
 	fontOpacity: "100",
 	effectLineHeightPref: false,
 	effectLineHeight: "100",
-	effectTextMarginPref: false,
-	effectTextMargin: "0",
+	effectTextVertMarginPref: false,
+	effectTextVertMargin: "0",
+	effectTextHorMarginPref: false,
+	effectTextHorMargin: "0",
 	effectTextVertPosition: "default",
 	effectTextHorPosition: "default",
 	effectLetterSpacingPref: false,

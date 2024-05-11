@@ -63,9 +63,14 @@ const calculateStyles = async () => {
 			`line-height: ${options.effectLineHeight}% !important;`
 		);
 
-	if (options.effectTextMarginPref)
+	if (options.effectTextVertMarginPref)
 		captionWindowStyles.push(
-			`margin-bottom: ${options.effectTextMargin}em !important; margin-top: ${options.effectTextMargin}em !important;`
+			`margin-bottom: ${options.effectTextVertMargin}em !important; margin-top: ${options.effectTextVertMargin}em !important;`
+		);
+
+	if (options.effectTextHorMarginPref)
+		captionWindowStyles.push(
+			`margin-left: ${options.effectTextHorMargin}em !important; margin-right: ${options.effectTextHorMargin}em !important;`
 		);
 
 	if (
@@ -76,7 +81,7 @@ const calculateStyles = async () => {
 
 	if (options.effectTextVertPosition !== "default") {
 		captionWindowStyles.push(`bottom: unset !important;`);
-		if (!options.effectTextMarginPref)
+		if (!options.effectTextVertMarginPref)
 			captionWindowStyles.push(`margin-bottom: 0 !important;`);
 	}
 
@@ -87,10 +92,11 @@ const calculateStyles = async () => {
 	else if (options.effectTextVertPosition === "bottom")
 		captionWindowContainerStyles.push(`align-items: end !important;`);
 
-	if (options.effectTextHorPosition !== "default")
-		captionWindowStyles.push(
-			`left: unset !important; margin-left: 0 !important;`
-		);
+	if (options.effectTextHorPosition !== "default") {
+		captionWindowStyles.push(`left: unset !important;`);
+		if (!options.effectTextHorMarginPref)
+			captionWindowStyles.push(`margin-left: 0 !important;`);
+	}
 
 	if (options.effectTextHorPosition === "left")
 		captionWindowContainerStyles.push(`justify-content: start !important;`);

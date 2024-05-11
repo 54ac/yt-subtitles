@@ -148,12 +148,16 @@ const calculateStyles = async () => {
 		bgTypeStylesSecondary.push(`background-color: transparent !important;`);
 	}
 
-	options.backgroundPaddingPref &&
-		parseFloat(options.backgroundPadding) > 0 &&
+	if (
+		options.backgroundPaddingPref &&
+		parseFloat(options.backgroundPadding) > 0
+	) {
 		bgTypeStyles.push(`padding: ${options.backgroundPadding}em !important;`);
+		bgTypeStylesSecondary.push(`padding: 0 !important;`);
+		captionWindowStyles.push(`width: unset !important;`);
+	}
 
-	options.backgroundRadiusPref &&
-		parseFloat(options.backgroundRadius) > 0 &&
+	if (options.backgroundRadiusPref && parseFloat(options.backgroundRadius) > 0)
 		bgTypeStyles.push(
 			`border-radius: ${options.backgroundRadius}em !important;`
 		);

@@ -18,7 +18,7 @@
 		"scripts": ["background.ts"],
 		"persistent": false
 	},
-	"permissions": ["storage"],
+	"permissions": ["storage", "tabs"],
 	"icons": {
 		"48": "img/icon-48.png",
 		"96": "img/icon-96.png"

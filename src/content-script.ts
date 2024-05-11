@@ -9,9 +9,9 @@ const addStyles = async () => {
 		"captionWindowStyles"
 	)) as Options["captionWindowStyles"];
 
-	if (!captionSegmentStyles && !captionWindowStyles) return;
-
 	document.getElementById("better-yt-style")?.remove();
+
+	if (!captionSegmentStyles && !captionWindowStyles) return;
 
 	const styleEl = document.createElement("style");
 	styleEl.id = "better-yt-style";
@@ -50,3 +50,7 @@ const ytOptionsObserver = new MutationObserver(() => {
 	ytOptionsObserver.disconnect();
 });
 ytOptionsEl && ytOptionsObserver.observe(ytOptionsEl, { childList: true });
+
+chrome.runtime.onMessage.addListener((message: { action: string }) => {
+	if (message.action === "updateSubtitles") addStyles();
+});

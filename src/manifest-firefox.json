@@ -25,7 +25,28 @@
 	},
 	"commands": {
 		"optionsOpen": {
-			"description": "__MSG_commandOpenOptions__"
+			"description": "__MSG_commandOptionsOpen__"
+		},
+		"fontSizeToggle": {
+			"description": "__MSG_commandFontSizeToggle__"
+		},
+		"fontSizeUp": {
+			"description": "__MSG_commandFontSizeUp__"
+		},
+		"fontSizeDown": {
+			"description": "__MSG_commandFontSizeDown__"
+		},
+		"fontOpacityToggle": {
+			"description": "__MSG_commandFontOpacityToggle__"
+		},
+		"fontOpacityUp": {
+			"description": "__MSG_commandFontOpacityUp__"
+		},
+		"fontOpacityDown": {
+			"description": "__MSG_commandFontOpacityDown__"
+		},
+		"backgroundColorOpacityToggle": {
+			"description": "__MSG_commandBackgroundColorOpacityToggle__"
 		}
 	}
 }

@@ -1,6 +1,7 @@
 import { setStorage, getAllStorage, getStorage } from "./components/storage";
 import { Options } from "./components/defaults";
 import calculateStyles from "./components/calculateStyles";
+import updateTabs from "./components/updateTabs";
 
 const optionEls = Array.from(
 	document.getElementsByClassName("option")
@@ -35,6 +36,7 @@ const saveOption = async (o: HTMLInputElement) => {
 		});
 
 	await calculateStyles();
+	updateTabs();
 	createPreview();
 };
 
@@ -127,3 +129,7 @@ const h3El = Array.from(
 	document.getElementsByTagName("h3")
 ) as HTMLHeadingElement[];
 h3El.forEach((h) => h.id && (h.textContent = _(h.id)));
+
+chrome.runtime.onMessage.addListener((message: { action: string }) => {
+	if (message.action === "updateOptions") restoreOptions();
+});

@@ -211,5 +211,29 @@
 	},
 	"backgroundRadiusPrefDesc": {
 		"message": "Zaokrąglone rogi tła."
+	},
+	"commandOptionsOpen": {
+		"message": "Otwórz opcje"
+	},
+	"commandFontSizeToggle": {
+		"message": "Włącz/wyłącz opcję rozmiaru czcionki"
+	},
+	"commandFontSizeUp": {
+		"message": "Zwiększ rozmiar czcionki o 25%"
+	},
+	"commandFontSizeDown": {
+		"message": "Zmniejsz rozmiar czcionki o 25%"
+	},
+	"commandFontOpacityToggle": {
+		"message": "Włącz/wyłącz opcję nieprzezroczystości czcionki"
+	},
+	"commandFontOpacityUp": {
+		"message": "Zwiększ nieprzezroczystość czcionki o 10%"
+	},
+	"commandFontOpacityDown": {
+		"message": "Zmniejsz nieprzezroczystość czcionki o 10%"
+	},
+	"commandBackgroundColorOpacityToggle": {
+		"message": "Włącz/wyłącz opcję koloru i nieprzezroczystości tła"
 	}
 }

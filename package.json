@@ -24,10 +24,10 @@
 		"typescript": "^5.0.4"
 	},
 	"scripts": {
-		"build": "npm run build-firefox && npm run build-chrome",
-		"build-firefox": "cpy -u 1 src/manifest-firefox.json . --rename=manifest.json && rimraf dist && parcel build src/manifest.json --config @parcel/config-webextension --no-source-maps && rimraf src/manifest.json",
-		"build-chrome": "cpy -u 1 src/manifest-chrome.json . --rename=manifest.json && rimraf dist-chrome && parcel build src/manifest.json --config @parcel/config-webextension --no-source-maps --dist-dir=dist-chrome && rimraf src/manifest.json",
+		"build": "npm run build:firefox && npm run build:chrome",
+		"build:firefox": "cpy -u 1 src/manifest-firefox.json . --rename=manifest.json && rimraf dist && parcel build src/manifest.json --config @parcel/config-webextension --no-source-maps && rimraf src/manifest.json",
+		"build:chrome": "cpy -u 1 src/manifest-chrome.json . --rename=manifest.json && rimraf dist-chrome && parcel build src/manifest.json --config @parcel/config-webextension --no-source-maps --dist-dir=dist-chrome && rimraf src/manifest.json",
 		"start": "cpy -u 1 src/manifest-firefox.json . --rename=manifest.json && rimraf dist && parcel watch src/manifest.json --host localhost --config @parcel/config-webextension && rimraf src/manifest.json"
 	},
-	"browserslist": "firefox 89"
+	"browserslist": "firefox 115"
 }

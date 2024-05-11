@@ -212,10 +212,28 @@
 	"backgroundRadiusPrefDesc": {
 		"message": "Rounded corners."
 	},
-	"commandOpenOptions": {
+	"commandOptionsOpen": {
 		"message": "Open options"
 	},
 	"commandFontSizeToggle": {
 		"message": "Toggle font size"
+	},
+	"commandFontSizeUp": {
+		"message": "Increase font size by 25%"
+	},
+	"commandFontSizeDown": {
+		"message": "Decrease font size by 25%"
+	},
+	"commandFontOpacityToggle": {
+		"message": "Toggle font opacity"
+	},
+	"commandFontOpacityUp": {
+		"message": "Increase font opacity by 10%"
+	},
+	"commandFontOpacityDown": {
+		"message": "Decrease font opacity by 10%"
+	},
+	"commandBackgroundColorOpacityToggle": {
+		"message": "Toggle background color"
 	}
 }

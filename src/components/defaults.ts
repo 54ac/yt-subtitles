@@ -40,6 +40,7 @@ export interface Options {
 	backgroundRadiusPref: boolean;
 	backgroundRadius: string;
 	captionSegmentStyles: string;
+	captionWindowContainerStyles: string;
 	captionWindowStyles: string;
 }
 
@@ -85,5 +86,6 @@ export const defaults: Options = {
 	backgroundRadiusPref: false,
 	backgroundRadius: "0",
 	captionSegmentStyles: "",
+	captionWindowContainerStyles: "",
 	captionWindowStyles: ""
 };

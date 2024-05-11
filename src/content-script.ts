@@ -5,13 +5,21 @@ const addStyles = async () => {
 	const captionSegmentStyles = (await getStorage(
 		"captionSegmentStyles"
 	)) as Options["captionSegmentStyles"];
+	const captionWindowContainerStyles = (await getStorage(
+		"captionWindowContainerStyles"
+	)) as Options["captionWindowContainerStyles"];
 	const captionWindowStyles = (await getStorage(
 		"captionWindowStyles"
 	)) as Options["captionWindowStyles"];
 
 	document.getElementById("better-yt-style")?.remove();
 
-	if (!captionSegmentStyles && !captionWindowStyles) return;
+	if (
+		!captionSegmentStyles &&
+		!captionWindowContainerStyles &&
+		!captionWindowStyles
+	)
+		return;
 
 	const styleEl = document.createElement("style");
 	styleEl.id = "better-yt-style";
@@ -22,6 +30,10 @@ const addStyles = async () => {
 			? `#movie_player .ytp-caption-segment { ${captionSegmentStyles} }`
 			: ""
 	} ${
+		captionWindowContainerStyles?.length > 0
+			? `#movie_player .ytp-caption-window-container { ${captionWindowContainerStyles} }`
+			: ""
+	}	${
 		captionWindowStyles?.length > 0
 			? `#movie_player .caption-window { ${captionWindowStyles} }`
 			: ""

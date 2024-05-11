@@ -14,6 +14,7 @@ const hexToRGB = (hex: string, alpha?: number) => {
 
 const calculateStyles = async () => {
 	const captionSegmentStyles: string[] = [];
+	const captionWindowContainerStyles: string[] = [];
 	const captionWindowStyles: string[] = [];
 
 	const options = (await getAllStorage()) as Options;
@@ -67,31 +68,36 @@ const calculateStyles = async () => {
 			`margin-bottom: ${options.effectTextMargin}em !important; margin-top: ${options.effectTextMargin}em !important;`
 		);
 
+	if (
+		options.effectTextVertPosition !== "default" ||
+		options.effectTextHorPosition !== "default"
+	)
+		captionWindowContainerStyles.push(`display: flex !important;`);
+
+	if (options.effectTextVertPosition !== "default") {
+		captionWindowStyles.push(`bottom: unset !important;`);
+		if (!options.effectTextMarginPref)
+			captionWindowStyles.push(`margin-bottom: 0 !important;`);
+	}
+
 	if (options.effectTextVertPosition === "top")
-		captionWindowStyles.push(
-			`top: 0 !important; bottom: unset !important; height: min-content !important;`
-		);
+		captionWindowContainerStyles.push(`align-items: start !important;`);
 	else if (options.effectTextVertPosition === "center")
-		captionWindowStyles.push(
-			`bottom: 50% !important; height: min-content !important;`
-		);
+		captionWindowContainerStyles.push(`align-items: center !important;`);
 	else if (options.effectTextVertPosition === "bottom")
+		captionWindowContainerStyles.push(`align-items: end !important;`);
+
+	if (options.effectTextHorPosition !== "default")
 		captionWindowStyles.push(
-			`bottom: 0 !important; height: min-content !important;`
+			`left: unset !important; margin-left: 0 !important;`
 		);
 
 	if (options.effectTextHorPosition === "left")
-		captionWindowStyles.push(
-			`left: 0 !important; margin-left: unset !important;`
-		);
+		captionWindowContainerStyles.push(`justify-content: start !important;`);
 	else if (options.effectTextHorPosition === "center")
-		captionWindowStyles.push(
-			`left: 50% !important; margin-left: unset !important;`
-		);
+		captionWindowContainerStyles.push(`justify-content: center !important;`);
 	else if (options.effectTextHorPosition === "right")
-		captionWindowStyles.push(
-			`left: unset !important; right: 0 !important; margin-left: unset !important;`
-		);
+		captionWindowContainerStyles.push(`justify-content: end !important;`);
 
 	if (options.effectTextTransform !== "none")
 		captionSegmentStyles.push(
@@ -109,7 +115,8 @@ const calculateStyles = async () => {
 	//use paint-order for outside stroke
 	if (options.effectStrokePref)
 		captionSegmentStyles.push(
-			`-webkit-text-stroke: ${options.effectStrokeWidth}em ${options.effectStrokeColor} !important; paint-order: stroke !important;`
+			`-webkit-text-stroke: ${options.effectStrokeWidth}em ${options.effectStrokeColor} !important; \
+				paint-order: stroke !important;`
 		);
 
 	if (options.effectShadowPref)
@@ -165,6 +172,13 @@ const calculateStyles = async () => {
 	await setStorage({
 		captionSegmentStyles:
 			captionSegmentStyles.length > 0 ? captionSegmentStyles.join(" ") : ""
+	});
+
+	await setStorage({
+		captionWindowContainerStyles:
+			captionWindowContainerStyles.length > 0
+				? captionWindowContainerStyles.join(" ")
+				: ""
 	});
 
 	await setStorage({

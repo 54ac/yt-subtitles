@@ -234,6 +234,6 @@
 		"message": "Decrease font opacity by 10%"
 	},
 	"commandBackgroundColorOpacityToggle": {
-		"message": "Toggle background color"
+		"message": "Toggle background color and opacity"
 	}
 }

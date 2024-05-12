@@ -35,7 +35,7 @@ const addStyles = async () => {
 			: ""
 	}	${
 		captionWindowStyles?.length > 0
-			? `#movie_player .caption-window { ${captionWindowStyles} }`
+			? `#movie_player .ytp-caption-window-bottom { ${captionWindowStyles} }`
 			: ""
 	}`;
 };

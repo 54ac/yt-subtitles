@@ -84,7 +84,7 @@ const createPreview = async () => {
 	previewContainerEl.style.display = "";
 	styleEl.innerText = `${
 		captionSegmentStyles?.length > 0
-			? `#previewContainer .ytp-caption-segment { ${captionSegmentStyles} }`
+			? `#previewContainer .caption-segment { ${captionSegmentStyles} }`
 			: ""
 	} ${
 		captionWindowStyles?.length > 0

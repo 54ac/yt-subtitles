@@ -12,6 +12,9 @@ const hexToRGB = (hex: string, alpha?: number) => {
 		: `rgb(${r}, ${g}, ${b})`;
 };
 
+const addStyle = (styleArray: string[], property: string, value: string) =>
+	styleArray.push(`${property}: ${value} !important;`);
+
 const calculateStyles = async () => {
 	const captionSegmentStyles: string[] = [];
 	const captionWindowContainerStyles: string[] = [];
@@ -19,95 +22,123 @@ const calculateStyles = async () => {
 
 	const options = (await getAllStorage()) as Options;
 
-	options.fontFamilyPref &&
-		options.fontFamily &&
-		captionSegmentStyles.push(
-			`font-family: ${options.fontFamily}, sans-serif !important;`
+	if (options.fontFamilyPref && options.fontFamily)
+		addStyle(
+			captionSegmentStyles,
+			"font-family",
+			`${options.fontFamily}, sans-serif`
 		);
 
-	options.fontSizePref &&
-		captionSegmentStyles.push(
-			`font-size: ${100 + parseInt(options.fontSize) * 2}% !important;`
+	if (options.fontSizePref)
+		addStyle(
+			captionSegmentStyles,
+			"font-size",
+			`${100 + parseInt(options.fontSize) * 2}%`
 		);
 
-	options.fontWeightPref &&
-		captionSegmentStyles.push(`font-weight: ${options.fontWeight} !important;`);
+	if (options.fontWeightPref)
+		addStyle(captionSegmentStyles, "font-weight", options.fontWeight);
 
-	options.fontColorPref &&
-		captionSegmentStyles.push(`color: ${options.fontColor} !important;`);
+	if (options.fontColorPref)
+		addStyle(captionSegmentStyles, "color", options.fontColor);
 
-	options.fontOpacityPref &&
-		parseInt(options.fontOpacity) < 100 &&
-		captionSegmentStyles.push(
-			`opacity: ${parseInt(options.fontOpacity) / 100} !important;`
+	if (options.fontOpacityPref && parseInt(options.fontOpacity) < 100)
+		addStyle(
+			captionSegmentStyles,
+			"opacity",
+			(parseInt(options.fontOpacity) / 100).toString()
 		);
 
 	if (
 		options.effectLetterSpacingPref &&
 		parseFloat(options.effectLetterSpacing) > 0
 	)
-		captionSegmentStyles.push(
-			`letter-spacing: ${options.effectLetterSpacing}em !important;`
+		addStyle(
+			captionSegmentStyles,
+			"letter-spacing",
+			`${options.effectLetterSpacing}em`
 		);
 
 	if (
 		options.effectWordSpacingPref &&
 		parseFloat(options.effectWordSpacing) > 0
 	)
-		captionSegmentStyles.push(
-			`word-spacing: ${options.effectWordSpacing}em !important;`
+		addStyle(
+			captionSegmentStyles,
+			"word-spacing",
+			`${options.effectWordSpacing}em`
 		);
 
 	if (options.effectLineHeightPref && parseFloat(options.effectLineHeight) > 0)
-		captionSegmentStyles.push(
-			`line-height: ${options.effectLineHeight}% !important;`
+		addStyle(
+			captionSegmentStyles,
+			"line-height",
+			`${options.effectLineHeight}%`
 		);
 
-	if (options.effectTextVertMarginPref)
-		captionWindowStyles.push(
-			`margin-bottom: ${options.effectTextVertMargin}em !important; margin-top: ${options.effectTextVertMargin}em !important;`
+	if (options.effectTextVertMarginPref) {
+		addStyle(
+			captionWindowStyles,
+			"margin-bottom",
+			`${options.effectTextVertMargin}em`
 		);
+		addStyle(
+			captionWindowStyles,
+			"margin-top",
+			`${options.effectTextVertMargin}em`
+		);
+	}
 
-	if (options.effectTextHorMarginPref)
-		captionWindowStyles.push(
-			`margin-left: ${options.effectTextHorMargin}em !important; margin-right: ${options.effectTextHorMargin}em !important;`
+	if (options.effectTextHorMarginPref) {
+		addStyle(
+			captionWindowStyles,
+			"margin-left",
+			`${options.effectTextHorMargin}em`
 		);
+		addStyle(
+			captionWindowStyles,
+			"margin-right",
+			`${options.effectTextHorMargin}em`
+		);
+	}
 
 	if (
 		options.effectTextVertPosition !== "default" ||
 		options.effectTextHorPosition !== "default"
 	)
-		captionWindowContainerStyles.push(`display: flex !important;`);
+		addStyle(captionWindowContainerStyles, "display", "flex");
 
 	if (options.effectTextVertPosition !== "default") {
-		captionWindowStyles.push(`bottom: unset !important;`);
+		addStyle(captionWindowStyles, "bottom", "unset");
 		if (!options.effectTextVertMarginPref)
-			captionWindowStyles.push(`margin-bottom: 0 !important;`);
+			addStyle(captionWindowStyles, "margin-bottom", "0");
 	}
 
 	if (options.effectTextVertPosition === "top")
-		captionWindowContainerStyles.push(`align-items: start !important;`);
+		addStyle(captionWindowContainerStyles, "align-items", "start");
 	else if (options.effectTextVertPosition === "center")
-		captionWindowContainerStyles.push(`align-items: center !important;`);
+		addStyle(captionWindowContainerStyles, "align-items", "center");
 	else if (options.effectTextVertPosition === "bottom")
-		captionWindowContainerStyles.push(`align-items: end !important;`);
+		addStyle(captionWindowContainerStyles, "align-items", "end");
 
 	if (options.effectTextHorPosition !== "default") {
-		captionWindowStyles.push(`left: unset !important;`);
+		addStyle(captionWindowStyles, "left", "unset");
 		if (!options.effectTextHorMarginPref)
-			captionWindowStyles.push(`margin-left: 0 !important;`);
+			addStyle(captionWindowStyles, "margin-left", "0");
 	}
 
 	if (options.effectTextHorPosition === "left")
-		captionWindowContainerStyles.push(`justify-content: start !important;`);
+		addStyle(captionWindowContainerStyles, "justify-content", "start");
 	else if (options.effectTextHorPosition === "center")
-		captionWindowContainerStyles.push(`justify-content: center !important;`);
+		addStyle(captionWindowContainerStyles, "justify-content", "center");
 	else if (options.effectTextHorPosition === "right")
-		captionWindowContainerStyles.push(`justify-content: end !important;`);
+		addStyle(captionWindowContainerStyles, "justify-content", "end");
 
 	if (options.effectTextTransform !== "none")
-		captionSegmentStyles.push(
-			`text-transform: ${options.effectTextTransform} !important;`
+		addStyle(
+			captionSegmentStyles,
+			"text-transform",
+			options.effectTextTransform
 		);
 
 	//reset built-in stroke/shadow
@@ -116,28 +147,36 @@ const calculateStyles = async () => {
 		options.effectShadowPref ||
 		options.effectTextBlurPref
 	)
-		captionSegmentStyles.push(`text-shadow: none !important;`);
+		addStyle(captionSegmentStyles, "text-shadow", "none");
 
 	//use paint-order for outside stroke
-	if (options.effectStrokePref)
-		captionSegmentStyles.push(
-			`-webkit-text-stroke: ${options.effectStrokeWidth}em ${options.effectStrokeColor} !important; \
-				paint-order: stroke !important;`
+	if (options.effectStrokePref) {
+		addStyle(
+			captionSegmentStyles,
+			"-webkit-text-stroke",
+			`${options.effectStrokeWidth}em ${options.effectStrokeColor}`
 		);
+		addStyle(captionSegmentStyles, "paint-order", "stroke");
+	}
 
 	if (options.effectShadowPref)
-		captionSegmentStyles.push(
-			`text-shadow: ${options.effectShadowOffsetX}em ${
-				options.effectShadowOffsetY
-			}em ${options.effectShadowBlur}em ${hexToRGB(
-				options.effectShadowColor,
-				parseInt(options.effectShadowOpacity) / 100
-			)} !important;`
+		addStyle(
+			captionSegmentStyles,
+			"text-shadow",
+			`${options.effectShadowOffsetX}em
+			 ${options.effectShadowOffsetY}em
+			 ${options.effectShadowBlur}em
+			 ${hexToRGB(
+					options.effectShadowColor,
+					parseInt(options.effectShadowOpacity) / 100
+				)}`
 		);
 
 	if (options.effectTextBlurPref && parseFloat(options.effectTextBlur) > 0)
-		captionSegmentStyles.push(
-			`filter: blur(${options.effectTextBlur}em) !important;`
+		addStyle(
+			captionSegmentStyles,
+			"filter",
+			`blur(${options.effectTextBlur}em)`
 		);
 
 	const bgTypeStyles =
@@ -151,29 +190,30 @@ const calculateStyles = async () => {
 			: captionWindowStyles;
 
 	if (options.backgroundColorOpacityPref) {
-		bgTypeStyles.push(
-			`background-color: ${hexToRGB(
+		addStyle(
+			bgTypeStyles,
+			"background-color",
+			hexToRGB(
 				options.backgroundColor,
 				parseInt(options.backgroundOpacity) / 100
-			)} !important;`
+			)
 		);
+
 		//only one type of background should be active
-		bgTypeStylesSecondary.push(`background-color: transparent !important;`);
+		addStyle(bgTypeStylesSecondary, "background-color", "transparent");
 	}
 
 	if (
 		options.backgroundPaddingPref &&
 		parseFloat(options.backgroundPadding) > 0
 	) {
-		bgTypeStyles.push(`padding: ${options.backgroundPadding}em !important;`);
-		bgTypeStylesSecondary.push(`padding: 0 !important;`);
-		captionWindowStyles.push(`width: unset !important;`);
+		addStyle(bgTypeStyles, "padding", `${options.backgroundPadding}em`);
+		addStyle(bgTypeStylesSecondary, "padding", "0");
+		addStyle(captionWindowStyles, "width", "unset");
 	}
 
 	if (options.backgroundRadiusPref && parseFloat(options.backgroundRadius) > 0)
-		bgTypeStyles.push(
-			`border-radius: ${options.backgroundRadius}em !important;`
-		);
+		addStyle(bgTypeStyles, "border-radius", `${options.backgroundRadius}em`);
 
 	await setStorage({
 		captionSegmentStyles:

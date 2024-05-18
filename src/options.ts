@@ -130,6 +130,17 @@ const h3El = Array.from(
 ) as HTMLHeadingElement[];
 h3El.forEach((h) => h.id && (h.textContent = _(h.id)));
 
+if (chrome.fontSettings) {
+	const datalistEl = document.getElementById("fontList") as HTMLDataListElement;
+	chrome.fontSettings.getFontList((fonts) => {
+		for (const font of fonts) {
+			const option = document.createElement("option");
+			option.value = font.displayName;
+			datalistEl.appendChild(option);
+		}
+	});
+}
+
 chrome.runtime.onMessage.addListener((message: { action: string }) => {
 	if (message.action === "updateOptions") restoreOptions();
 });

@@ -163,13 +163,7 @@ const calculateStyles = async () => {
 		addStyle(
 			captionSegmentStyles,
 			"text-shadow",
-			`${options.effectShadowOffsetX}em
-			 ${options.effectShadowOffsetY}em
-			 ${options.effectShadowBlur}em
-			 ${hexToRGB(
-					options.effectShadowColor,
-					parseInt(options.effectShadowOpacity) / 100
-				)}`
+			`${options.effectShadowOffsetX}em ${options.effectShadowOffsetY}em ${options.effectShadowBlur}em ${hexToRGB(options.effectShadowColor, parseInt(options.effectShadowOpacity) / 100)}`
 		);
 
 	if (options.effectTextBlurPref && parseFloat(options.effectTextBlur) > 0)

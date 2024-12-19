@@ -2,9 +2,6 @@
 	"extText": {
 		"message": "Adds more customization options to YouTube subtitles."
 	},
-	"optionsButtonText": {
-		"message": "Advanced"
-	},
 	"headerInfo": {
 		"message": "You can also access this menu by clicking the \"advanced\" button in YouTube's subtitle options menu in the player, unless it is overriden by other addons. Hover over option labels to learn more. The preview below is an approximation."
 	},

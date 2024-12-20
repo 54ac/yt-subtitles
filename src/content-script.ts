@@ -27,17 +27,33 @@ const addStyles = async () => {
 
 	styleEl.innerText = `${
 		captionSegmentStyles?.length > 0
-			? `#movie_player .ytp-caption-segment { ${captionSegmentStyles} }`
+			? `.html5-video-player .ytp-caption-segment { ${captionSegmentStyles} }`
 			: ""
 	} ${
 		captionWindowContainerStyles?.length > 0
-			? `#movie_player .ytp-caption-window-container { ${captionWindowContainerStyles} }`
+			? `.html5-video-player .ytp-caption-window-container { ${captionWindowContainerStyles} }`
 			: ""
 	}	${
 		captionWindowStyles?.length > 0
-			? `#movie_player .ytp-caption-window-bottom { ${captionWindowStyles} }`
+			? `.html5-video-player .ytp-caption-window-bottom, .html5-video-player .ytp-caption-window-top { ${captionWindowStyles} }`
 			: ""
 	}`;
+
+	// workaround for font size in shorts and previews
+	if (await getStorage("fontSizePref")) {
+		const optFontSize = parseInt(
+			(await getStorage("fontSize")) as Options["fontSize"]
+		);
+
+		styleEl.innerText += `
+			#shorts-player .ytp-caption-segment {
+				font-size: ${100 + optFontSize}% !important;
+			}
+
+			#inline-preview-player .ytp-caption-segment {
+				font-size: ${100 + optFontSize / 1.5}% !important;
+			}`;
+	}
 };
 addStyles();
 

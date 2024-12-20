@@ -1,0 +1,51 @@
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.4;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	vertical-align: middle;
+	height: 40px;
+}
+
+td > * {
+	vertical-align: middle;
+}
+
+input,
+select {
+	height: 30px;
+	margin-right: 10px;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+input[type="color"] {
+	padding: 2px;
+}
+
+datalist {
+	display: none;
+}
+
+#previewContainer {
+	background-color: gainsboro;
+	margin: 1em;
+	padding: 2em;
+}
+
+.caption-window {
+	font-size: 1vw;
+	padding: 1em;
+}
+
+#previewText {
+	font-size: 300%;
+	text-align: center;
+	color: white;
+	margin: 0;
+}

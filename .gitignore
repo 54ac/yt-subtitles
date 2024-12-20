@@ -1,7 +1,5 @@
-/dist
+/dist-firefox
 /dist-chrome
 /node_modules
-/.parcel-cache
-/src/manifest.json
-.firefox.exe.lnk
+
 icon.svg

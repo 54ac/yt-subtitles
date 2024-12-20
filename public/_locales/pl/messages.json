@@ -3,7 +3,7 @@
 		"message": "Dodaje więcej opcji związanych z napisami na YouTube."
 	},
 	"headerInfo": {
-		"message": "Dostęp do tego menu można również uzyskać za pomocą przycisku \"zaawansowane\" w opcjach napisów w odtwarzaczu YouTube, o ile nie przeszkodzą w tym inne dodatki. Najedź kursorem na etykiety opcji, aby poznać więcej informacji. Podgląd poniżej jest orientacyjny."
+		"message": "Najedź kursorem na etykiety opcji, aby poznać więcej informacji. Podgląd poniżej jest orientacyjny."
 	},
 	"previewText": {
 		"message": "Napisy będą wyglądać mniej więcej tak."
@@ -156,7 +156,7 @@
 		"message": "Kolor obrysu tekstu"
 	},
 	"effectStrokePrefDesc": {
-		"message": "Kontur tekstu. Ustawienie 0x wyłącza efekt."
+		"message": "Kontur tekstu. Ustawienie 0x wyłącza efekt. Może nie działać poprawnie w Chrome."
 	},
 	"effectShadowPref": {
 		"message": "Cień tekstu"

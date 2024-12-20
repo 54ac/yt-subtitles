@@ -3,7 +3,7 @@
 		"message": "Adds more customization options to YouTube subtitles."
 	},
 	"headerInfo": {
-		"message": "You can also access this menu by clicking the \"advanced\" button in YouTube's subtitle options menu in the player, unless it is overriden by other addons. Hover over option labels to learn more. The preview below is an approximation."
+		"message": "Hover over option labels to learn more. The preview below is an approximation."
 	},
 	"previewText": {
 		"message": "The subtitles will look more or less like this."
@@ -156,7 +156,7 @@
 		"message": "Text stroke color"
 	},
 	"effectStrokePrefDesc": {
-		"message": "Outline around text. Set to 0x width to disable."
+		"message": "Outline around text. Set to 0x width to disable. Can be buggy in Chrome."
 	},
 	"effectShadowPref": {
 		"message": "Text shadow"

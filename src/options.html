@@ -1,22 +1,19 @@
 <!doctype html>
-
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title>Better YouTube Subtitles</title>
 		<style id="better-yt-style"></style>
+		<link rel="stylesheet" href="/src/options.css" />
 	</head>
-
 	<body>
 		<h3>Better YouTube Subtitles <span id="version" /></h3>
 		<p id="headerInfo" />
-		<table style="width: 100%; table-layout: fixed">
-			<thead>
-				<tr>
-					<th style="width: 50%" />
-					<th style="width: 50%" />
-				</tr>
-			</thead>
+		<table>
+			<colgroup>
+				<col style="width: 50%" />
+				<col style="width: 50%" />
+			</colgroup>
 			<tbody>
 				<tr>
 					<td><h3 id="headerFont" /></td>
@@ -485,16 +482,9 @@
 				</tr>
 			</tbody>
 		</table>
-		<div
-			style="padding: 1em; margin: 1em; background-color: gainsboro"
-			id="previewContainer"
-		>
+		<div id="previewContainer">
 			<div class="caption-window">
-				<p
-					class="caption-segment"
-					id="previewText"
-					style="text-align: center; color: white; font-size: 300%"
-				/>
+				<p class="caption-segment" id="previewText" />
 			</div>
 		</div>
 

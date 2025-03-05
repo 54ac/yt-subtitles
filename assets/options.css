@@ -1,6 +1,9 @@
 body {
 	font-family: Arial, sans-serif;
+	font-size: 1em;
 	line-height: 1.4;
+	max-width: 1024px;
+	margin: 0 auto;
 }
 
 table {
@@ -39,7 +42,7 @@ datalist {
 }
 
 .caption-window {
-	font-size: 1vw;
+	font-size: 0.75vw;
 	padding: 1em;
 }
 

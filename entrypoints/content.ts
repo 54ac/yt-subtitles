@@ -1,5 +1,5 @@
-import { Options } from "./components/defaults";
-import { getStorage } from "./components/storage";
+import { Options } from "../components/defaults";
+import { getStorage } from "../components/storage";
 
 const addStyles = async () => {
 	const captionSegmentStyles = (await getStorage(
@@ -55,8 +55,15 @@ const addStyles = async () => {
 			}`;
 	}
 };
-addStyles();
 
-chrome.runtime.onMessage.addListener((message: { action: string }) => {
-	if (message.action === "updateSubtitles") addStyles();
+export default defineContentScript({
+	matches: ["https://*.youtube.com/*"],
+	runAt: "document_end",
+	main() {
+		addStyles();
+
+		chrome.runtime.onMessage.addListener((message: { action: string }) => {
+			if (message.action === "updateSubtitles") addStyles();
+		});
+	}
 });

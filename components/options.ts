@@ -1,7 +1,7 @@
-import { setStorage, getAllStorage, getStorage } from "./components/storage";
-import { Options } from "./components/defaults";
-import calculateStyles from "./components/calculateStyles";
-import updateTabs from "./components/updateTabs";
+import { setStorage, getAllStorage, getStorage } from "./storage";
+import { Options } from "./defaults";
+import calculateStyles from "./calculateStyles";
+import updateTabs from "./updateTabs";
 
 const optionEls = Array.from(
 	document.getElementsByClassName("option")

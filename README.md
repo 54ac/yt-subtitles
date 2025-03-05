@@ -4,7 +4,7 @@
 
 This is a browser addon written in TypeScript which adds more customization options to YouTube subtitles. It is fully compatible with existing YouTube subtitles, as it merely changes their appearance using CSS and does not replace them. Uses [WXT](https://wxt.dev/).
 
-Access the options either as you normally would in the browser. You can also set up hotkeys to trigger certain options in your browser's keyboard shortcuts menu.
+Access the options as you normally would in the browser, or you can set up hotkeys to trigger certain options in your browser's keyboard shortcuts menu.
 
 ![A screenshot of the options menu.](https://addons.mozilla.org/user-media/previews/full/299/299323.png)
 

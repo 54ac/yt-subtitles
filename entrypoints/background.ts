@@ -37,11 +37,11 @@ export default defineBackground(() => {
 				fontSizePref: !options.fontSizePref
 			});
 		} else if (command === "fontSizeUp") {
-			if (options.fontSize === "200") return;
+			if (options.fontSize === "300") return;
 			await setStorage({
 				fontSize:
-					parseInt(options.fontSize) + 25 > 200
-						? "200"
+					parseInt(options.fontSize) + 25 > 300
+						? "300"
 						: (parseInt(options.fontSize) + 25).toString()
 			});
 		} else if (command === "fontSizeDown") {

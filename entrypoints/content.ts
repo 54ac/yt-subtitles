@@ -1,4 +1,4 @@
-import { Options } from "../components/defaults";
+import type { Options } from "../components/defaults";
 import { getStorage } from "../components/storage";
 
 const addStyles = async () => {

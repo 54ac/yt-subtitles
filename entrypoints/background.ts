@@ -1,24 +1,50 @@
-import { Options, defaults } from "../components/defaults";
-import { getAllStorage, setStorage } from "../components/storage";
+import { type Options, defaults } from "../components/defaults";
+import {
+	getAllStorage,
+	setStorage,
+	syncStorageWithRemote
+} from "../components/storage";
 import updateTabs from "../components/updateTabs";
 import calculateStyles from "../components/calculateStyles";
 
 const init = async () => {
+	await syncStorageWithRemote();
 	const optionsStorage = (await getAllStorage()) as Options;
 
+	const missing: Record<string, string | boolean> = {};
 	Object.keys(defaults).forEach((key) => {
 		if (
 			optionsStorage === null ||
 			optionsStorage[key as keyof Options] === undefined
 		)
-			setStorage({
-				[key]: defaults[key as keyof typeof defaults]
-			});
+			missing[key] = defaults[key as keyof typeof defaults];
 	});
+	if (Object.keys(missing).length > 0) {
+		await setStorage(missing);
+	}
+	await calculateStyles();
 };
 
 export default defineBackground(() => {
 	init();
+
+	chrome.storage.onChanged.addListener(async (changes, areaName) => {
+		if (areaName !== "sync") return;
+		const incoming: Record<string, string | boolean> = {};
+		for (const [k, v] of Object.entries(changes)) {
+			if (v && "newValue" in v) {
+				incoming[k] = v.newValue as string | boolean;
+			}
+		}
+		if (Object.keys(incoming).length === 0) return;
+
+		await new Promise((resolve) =>
+			chrome.storage.local.set(incoming, () => resolve(null))
+		);
+		await calculateStyles();
+		updateTabs();
+		chrome.runtime.sendMessage({ action: "updateOptions" });
+	});
 
 	chrome.runtime.onMessage.addListener((message: { action: string }) => {
 		if (message.action === "openOptions") chrome.runtime.openOptionsPage();

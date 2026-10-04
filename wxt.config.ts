@@ -3,12 +3,31 @@ import eslint from "@nabla/vite-plugin-eslint";
 import stylelint from "vite-plugin-stylelint";
 
 export default defineConfig({
-	extensionApi: "chrome",
+	hooks: {
+		"build:done": (wxt) => {
+			if (wxt.config.command === "serve") return;
+			setTimeout(() => process.exit(0), 1000);
+		},
+		"prepare:tsconfig": () => {
+			if (process.argv.includes("prepare")) {
+				setTimeout(() => process.exit(0), 1000);
+			}
+		},
+		"zip:done": (wxt) => {
+			if (wxt.config.command === "serve") return;
+			setTimeout(() => process.exit(0), 1000);
+		}
+	},
 	manifest: ({ browser }) => {
 		return {
 			name: "Better YouTube Subtitles",
 			description: "__MSG_extText__",
 			default_locale: "en",
+			browser_specific_settings: {
+				gecko: {
+					id: "yt-subtitles@54ac"
+				}
+			},
 			commands: {
 				optionsOpen: {
 					description: "__MSG_commandOptionsOpen__"

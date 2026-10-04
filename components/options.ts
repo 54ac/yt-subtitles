@@ -1,5 +1,5 @@
 import { setStorage, getAllStorage, getStorage } from "./storage";
-import { Options } from "./defaults";
+import type { Options } from "./defaults";
 import calculateStyles from "./calculateStyles";
 import updateTabs from "./updateTabs";
 
@@ -142,5 +142,8 @@ if (chrome.fontSettings) {
 }
 
 chrome.runtime.onMessage.addListener((message: { action: string }) => {
-	if (message.action === "updateOptions") restoreOptions();
+	if (message.action === "updateOptions") {
+		restoreOptions();
+		createPreview();
+	}
 });

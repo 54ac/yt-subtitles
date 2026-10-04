@@ -1,5 +1,5 @@
 import { getAllStorage, setStorage } from "./storage";
-import { Options } from "./defaults";
+import { defaults, type Options } from "./defaults";
 
 // https://stackoverflow.com/a/28056903
 const hexToRGB = (hex: string, alpha?: number) => {
@@ -20,7 +20,7 @@ const calculateStyles = async () => {
 	const captionWindowContainerStyles: string[] = [];
 	const captionWindowStyles: string[] = [];
 
-	const options = (await getAllStorage()) as Options;
+	const options = ((await getAllStorage()) || defaults) as Options;
 
 	if (options.fontFamilyPref && options.fontFamily)
 		addStyle(
@@ -211,17 +211,11 @@ const calculateStyles = async () => {
 
 	await setStorage({
 		captionSegmentStyles:
-			captionSegmentStyles.length > 0 ? captionSegmentStyles.join(" ") : ""
-	});
-
-	await setStorage({
+			captionSegmentStyles.length > 0 ? captionSegmentStyles.join(" ") : "",
 		captionWindowContainerStyles:
 			captionWindowContainerStyles.length > 0
 				? captionWindowContainerStyles.join(" ")
-				: ""
-	});
-
-	await setStorage({
+				: "",
 		captionWindowStyles:
 			captionWindowStyles.length > 0 ? captionWindowStyles.join(" ") : ""
 	});

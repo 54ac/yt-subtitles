@@ -2,12 +2,12 @@
 	"name": "yt-subtitles",
 	"author": {
 		"name": "54ac",
-		"email": "me@54ac.ovh",
+		"email": "54acbio@gmail.com",
 		"url": "https://github.com/54ac"
 	},
 	"repository": "github:54ac/yt-subtitles",
 	"private": true,
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"type": "module",
 	"scripts": {
 		"start": "wxt -b firefox",
@@ -23,18 +23,24 @@
 		"postinstall": "wxt prepare"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.37.0",
-		"@nabla/vite-plugin-eslint": "^2.0.6",
-		"@types/chrome": "^0.1.22",
-		"eslint": "^9.37.0",
+		"@eslint/js": "^10.0.1",
+		"@nabla/vite-plugin-eslint": "^3.0.1",
+		"@types/chrome": "^0.3.4",
+		"@types/node": "^26.6.4",
+		"eslint": "^10.12.0",
 		"eslint-config-prettier": "^10.1.8",
-		"globals": "^16.4.0",
+		"globals": "^17.0.0",
 		"prettier": "^3.6.2",
-		"stylelint": "^16.25.0",
-		"stylelint-config-standard": "^39.0.0",
-		"typescript": "^5.9.3",
+		"stylelint": "^17.16.0",
+		"stylelint-config-standard": "^40.0.0",
+		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.45.0",
-		"vite-plugin-stylelint": "^6.0.2",
-		"wxt": "^0.20.11"
+		"vite-plugin-stylelint": "6.0.4",
+		"web-ext": "^10.7.0",
+		"wxt": "^0.21.4"
+	},
+	"allowScripts": {
+		"esbuild@0.28.2": true,
+		"spawn-sync@1.0.15": true
 	}
 }

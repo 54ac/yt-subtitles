@@ -25,7 +25,8 @@ export default defineConfig({
 			default_locale: "en",
 			browser_specific_settings: {
 				gecko: {
-					id: "yt-subtitles@54ac"
+					id: "{46590c95-495e-4a9d-8b46-96d22908a77d}",
+					strict_min_version: "115.0"
 				}
 			},
 			commands: {
@@ -59,6 +60,10 @@ export default defineConfig({
 					? ["storage", "tabs"]
 					: ["storage", "tabs", "fontSettings"]
 		};
+	},
+	zip: {
+		artifactTemplate: "{{name}}-{{browser}}.zip",
+		sourcesTemplate: "{{name}}-sources.zip"
 	},
 	vite: () => ({ plugins: [eslint(), stylelint()] })
 });

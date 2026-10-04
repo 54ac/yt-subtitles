@@ -19,6 +19,8 @@
 		"zip": "npm run zip:firefox && npm run zip:chrome",
 		"zip:firefox": "wxt zip -b firefox",
 		"zip:chrome": "wxt zip -b chrome",
+		"submit": "npm run build && npm run zip && wxt submit",
+		"postsubmit": "node scripts/postsubmit.js",
 		"compile": "tsc --noEmit",
 		"postinstall": "wxt prepare"
 	},
